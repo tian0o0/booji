@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "@booji/utils",
   "author": "xietian",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "main": "./dist/utils.cjs.js",
   "module": "./dist/utils.esm.js",
   "types": "./dist/utils.d.ts",

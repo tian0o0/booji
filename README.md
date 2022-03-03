@@ -15,8 +15,8 @@
 ### Features
 - :gift: **Rich Integrations and Out of the box**
 - :art: **Highly Customizable**
-- :ok_hand: **Support `Vue`/`Angular`/`React`**
-- :zap: **Report in `Web Worker` to avoid block the main thread**
+- :rainbow: **Support `Vue`/`Angular`/`React`**
+- :rocket: **Report in `Web Worker` to avoid block the main thread**
 
 ### Quick Start
 ```ts

@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "@booji/angular",
   "author": "xietian",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "main": "./dist/angular.cjs.js",
   "module": "./dist/angular.esm.js",
   "types": "./dist/angular.d.ts",

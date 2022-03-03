@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "@booji/hub",
   "author": "xietian",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "main": "./dist/hub.cjs.js",
   "module": "./dist/hub.esm.js",
   "types": "./dist/hub.d.ts",

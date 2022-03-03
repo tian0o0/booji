@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "@booji/browser",
   "author": "xietian",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "main": "./dist/browser.cjs.js",
   "module": "./dist/browser.esm.js",
   "types": "./dist/browser.d.ts",

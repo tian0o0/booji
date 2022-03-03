@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "@booji/vue",
   "author": "xietian",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "main": "./dist/vue.cjs.js",
   "module": "./dist/vue.esm.js",
   "types": "./dist/vue.d.ts",

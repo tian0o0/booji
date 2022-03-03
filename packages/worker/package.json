@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "@booji/worker",
   "author": "xietian",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "main": "./dist/worker.cjs.js",
   "module": "./dist/worker.esm.js",
   "types": "./dist/worker.d.ts",

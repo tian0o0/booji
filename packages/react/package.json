@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "@booji/react",
   "author": "xietian",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "main": "./dist/react.cjs.js",
   "module": "./dist/react.esm.js",
   "types": "./dist/react.d.ts",
