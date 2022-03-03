@@ -1,0 +1,17 @@
+lockfileVersion: 5.3
+
+specifiers:
+  '@booji/types': 0.0.6
+  '@booji/utils': 0.0.6
+  tslib: 2.3.1
+
+dependencies:
+  '@booji/types': link:../types
+  '@booji/utils': link:../utils
+  tslib: 2.3.1
+
+packages:
+
+  /tslib/2.3.1:
+    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
+    dev: false

@@ -1,0 +1,76 @@
+{
+  "version": "0.2.0",
+  "author": "xietian",
+  "license": "ISC",
+  "private": true,
+  "homepage": "https://tian0o0.github.io/booji",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tian0o0/booji.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --include-dependencies",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "commit": "git-cz",
+    "semver": "standard-version -a",
+    "build": "turbo run build",
+    "docs:gen": "api-documenter markdown --input-folder api-docs",
+    "docs:dev": "vuepress dev markdown",
+    "docs:build": "node build/generate-vuepress-config.js && vuepress build markdown",
+    "publish": "node build/publish.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "packages/*_/_.{ts}": [
+      "pnpm run lint",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "node build/version-bump.js && git add ."
+    }
+  },
+  "devDependencies": {
+    "@microsoft/api-documenter": "^7.15.1",
+    "@microsoft/api-extractor": "^7.19.4",
+    "@types/jest": "^27.4.0",
+    "@typescript-eslint/parser": "^5.9.1",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "execa": "2.1.0",
+    "fs-extra": "^10.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.1.7",
+    "prettier": "^2.5.1",
+    "replace-in-file": "^6.3.2",
+    "rollup": "^2.63.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "rollup-plugin-visualizer": "^5.5.4",
+    "standard-version": "^9.3.2",
+    "ts-jest": "^27.1.3",
+    "turbo": "^1.0.28",
+    "typescript": "^4.5.4",
+    "vuepress": "^1.9.7"
+  },
+  "packageManager": "pnpm@6.30.1"
+}

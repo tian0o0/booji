@@ -1,0 +1,43 @@
+import { BreadcrumbItem, SdkInfo, Severity } from ".";
+/**
+ * 事件接口
+ * @public
+ */
+export interface Event {
+  /**
+   * hash with env，用于事件去重
+   */
+  eventHash?: string;
+  /**
+   * hash without env，用于事件分组
+   */
+  issueId?: string;
+  /**
+   * uuid，每个eventId都不相同
+   */
+  eventId?: string;
+  type?: string;
+  category?: string;
+  level?: Severity;
+  message?: string;
+  stack?: string;
+  timestamp?: number;
+  sdk?: SdkInfo;
+  breadcrumbs?: BreadcrumbItem[];
+  /**
+   * 事件发生时的url
+   */
+  url?: string;
+}
+
+/**
+ *
+ * 平台类型
+ * @public
+ */
+export enum PlatformType {
+  Vue = "VUE",
+  Vue2 = "VUE2",
+  React = "REACT",
+  Mp = "MP",
+}

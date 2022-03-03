@@ -1,0 +1,52 @@
+{
+  "name": "@booji/angular",
+  "version": "0.2.0",
+  "description": "@booji/angular",
+  "author": "xietian",
+  "license": "MIT",
+  "main": "./dist/angular.cjs.js",
+  "module": "./dist/angular.esm.js",
+  "types": "./dist/angular.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c && node ../../build/api-extractor.js angular",
+    "lint": "prettier --write src/**/*"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/*.test.ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "./tsconfig.json",
+        "diagnostics": false
+      }
+    }
+  },
+  "dependencies": {
+    "@booji/browser": "0.2.0",
+    "@booji/types": "0.2.0",
+    "tslib": "^2.3.1"
+  },
+  "peerDependencies": {
+    "@angular/common": "10.x || 11.x || 12.x || 13.x",
+    "@angular/core": "10.x || 11.x || 12.x || 13.x"
+  },
+  "devDependencies": {
+    "@angular/common": "^13.2.4",
+    "@angular/core": "^13.2.4"
+  }
+}

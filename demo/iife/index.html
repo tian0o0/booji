@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iife</title>
+    <script src="../../packages/browser/dist/browser.min.js"></script>
+    <!-- <script src="http://localhost:8080/test.js" async></script> -->
+  </head>
+  <body>
+    <button id="button1" onclick="onXhr()">正常xhr</button>
+    <button id="button2" onclick="onXhrError()">异常xhr</button>
+    <button onclick="onFetch()">正常fetch</button>
+    <button onclick="onFetchError()">异常fetch</button>
+
+    <button id="button3" onclick="onError()">代码报错</button>
+    <button id="button4" onclick="onPromiseError()">promise报错</button>
+    <button onclick="customError()">自定义错误</button>
+    <button onclick="pushstate()">pushstate</button>
+    <!-- <img src="http://localhost:8080/a.png" id="img"/> -->
+    <script>
+      function getUserId() {
+        const BoojiUserId = localStorage.getItem("BoojiUserId")
+        let uuid
+        if(!BoojiUserId) {
+          uuid = Booji.uuid4()
+          localStorage.setItem("BoojiUserId", uuid)
+        } else {
+          uuid = BoojiUserId
+        }
+        return uuid
+      }
+      Booji.customScope((scope) => {
+        scope.setUser({
+          id: getUserId()
+        })
+      })
+      Booji.init({
+        debug: true,
+        dsn: "http://localhost:3000/booji",
+        appKey: "123",
+        webWorker: {
+          url: "./worker.js",
+        },
+        dedupe: false,
+        // beforeAddBreadcrumb(b) {
+        //   return b
+        // },
+        // console: true,
+        // dom: false,
+        // xhr: false,
+        // fetch: false,
+        // ignoreUrls: ["localhost"]
+        // ignoreErrors: ["TypeError"],
+      });
+    </script>
+    <script>
+      
+      function onXhr() {
+        const xhr = new XMLHttpRequest()
+        xhr.open('get', 'https://jsonplaceholder.typicode.com/todos/1')
+        xhr.send(null)
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            console.log(xhr)
+          }
+        }
+      }
+      function onXhrError() {
+        const xhr = new XMLHttpRequest()
+        xhr.open('get', '/error')
+        xhr.send(null)
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            console.log(xhr)
+          }
+        }
+      }
+      function onFetch() {
+        fetch('http://localhost:3000/booji', {
+          method: 'POST',
+          body: JSON.stringify({ test: '测试请求体' }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then((res) => {
+          res.text().then((res) => console.log(res))
+        })
+      }
+      function onFetchError() {
+        fetch('http://localhost:3000/booji2', {
+          method: 'POST',
+          body: JSON.stringify({ test: '测试请求体' }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then((res) => {
+          res.text().then((res) => console.log(res))
+        })
+      }
+      function onError() {
+          let a = {}
+          a.split('/')
+      }
+      // for(let i = 1; i < 10; i++) {
+      //   (function(i) { 
+      //     onPromiseError();
+      //   })(i)
+      // }
+
+      function onPromiseError() {
+        new Promise((resolve, reject) => {
+          reject('promise reject')
+        })
+      }
+      function customError() {
+        // Sentry.captureException(new Error("草尼玛"))
+        Booji.captureMessage("wowowow")
+      }
+      function pushstate() {
+        history.pushState({a: 1}, "", "./sentry.html")
+      }
+    </script>
+    
+  </body>
+</html>

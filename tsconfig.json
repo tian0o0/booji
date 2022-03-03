@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "target": "ES5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": false,
+    "baseUrl": ".",
+    "paths": {
+      "@booji/core": ["packages/core/src"],
+      "@booji/types": ["packages/types/src"],
+      "@booji/utils": ["packages/utils/src"],
+      "@booji/hub": ["packages/hub/src"],
+      "@booji/browser": ["packages/browser/src"],
+      "@booji/vue": ["packages/vue/src"],
+      "@booji/react": ["packages/react/src"],
+      "@booji/angular": ["packages/angular/src"],
+      "@booji/worker": ["packages/worker/src"]
+    }
+  }
+}

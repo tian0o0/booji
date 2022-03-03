@@ -1,0 +1,22 @@
+{
+  "name": "@booji/types",
+  "version": "0.2.0",
+  "description": "@booji/types",
+  "author": "xietian",
+  "license": "MIT",
+  "main": "./dist/types.cjs.js",
+  "module": "./dist/types.esm.js",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c && node ../../build/api-extractor.js types",
+    "lint": "prettier --write src/**/*"
+  },
+  "dependencies": {
+    "tslib": "^2.3.1"
+  }
+}

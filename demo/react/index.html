@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>react-demo</title>
+  </head>
+
+  <body>
+    <h1>react17:控制台输出信息调试</h1>
+    <h2>点击数字，点击2下就抛出异常</h2>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@16.8.0/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16.8.0/umd/react-dom.development.js"></script>
+    <script src="../../packages/react/dist/react.min.js"></script>
+    <script>
+      Booji.init({
+        debug: true,
+        dsn: "http://localhost:3000/booji",
+        appKey: "123",
+      })
+
+      const h = React.createElement
+      
+      class BuggyCounter extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { counter: 0 };
+          this.handleClick = this.handleClick.bind(this);
+        }
+        
+        handleClick(e) {
+          this.setState(({counter}) => ({
+            counter: counter + 1
+          }));
+        }
+        
+        render() {
+          if (this.state.counter === 2) {
+            // Simulate a JS error
+            throw new Error('I crashed!');
+          }
+          return h('h1', {onClick: this.handleClick}, this.state.counter)
+        }
+      }
+      
+      ReactDOM.render(
+        h(
+            "div", 
+            null,
+            h(
+              Booji.ErrorBoundary,
+              null,
+              h("p", null, "These two counters are inside the same error boundary. If one crashes, the error boundary will replace both of them."),
+              h(BuggyCounter, null),
+              h(BuggyCounter, null),
+            ),
+            h("p", null, "These two counters are each inside of their own error boundary. So if one crashes, the other is not affected."),
+            h(
+              Booji.ErrorBoundary,
+              null,
+              h(BuggyCounter, null),
+            ),
+            h(
+              Booji.ErrorBoundary,
+              null,
+              h(BuggyCounter, null),
+            )
+          ),
+        document.getElementById('root')
+      );
+
+    </script>
+  </body>
+</html>

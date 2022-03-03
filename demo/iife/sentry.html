@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iife</title>
+    <script
+  src="https://cdn.jsdelivr.net/npm/@sentry/browser@6.17.7/build/bundle.min.js"
+></script>
+  </head>
+  <body>
+    <button id="button1" onclick="onXhr()">正常xhr请求</button>
+    <button id="button2" onclick="onXhrError()">异常xhr请求</button>
+    <button id="button3" onclick="onError()">代码报错</button>
+    <button id="button4" onclick="onPromiseError()">promise报错</button>
+    <button onclick="customError()">自定义错误</button>
+    <a href="./index.html">页面跳转</a>
+    <img src="http://localhost:8080/a.png" id="img"/>
+    <script>
+      Sentry.init({
+        dsn: "http://bc061afdfc9b489eacb7aa0def328f7c@localhost:9000/2",
+        debug: true
+      })
+    </script>
+    <script>
+      Sentry.captureMessage(
+        `test captureMessage2`,
+        Sentry.Severity.Error
+      );
+      Sentry.captureException(new Error("test captureException2"));
+      
+      function onXhr() {
+        const xhr = new XMLHttpRequest()
+        xhr.open('get', 'https://jsonplaceholder.typicode.com/todos/1')
+        xhr.send(null)
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            // console.log(xhr)
+          }
+        }
+      }
+      function onXhrError() {
+        const xhr = new XMLHttpRequest()
+        xhr.open('get', '/error')
+        xhr.send(null)
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            // console.log(xhr)
+          }
+        }
+      }
+      function onError() {
+        let a = {}
+        a.split('/')
+      }
+      function onPromiseError() {
+        new Promise((resolve, reject) => {
+          reject('promise reject')
+        })
+      }
+      // Sentry.configureScope((scope) => {
+      //   scope.setLevel('error');
+      // });
+      // Sentry.addBreadcrumb({
+      //   message: 'My Breadcrumb',
+      //   // ...
+      // });
+      function customError() {
+        // Sentry.captureException(new Error("草尼玛"))
+        // Sentry.captureMessage("wowowow")
+        Sentry.captureEvent({
+          message: 'Manual',
+          stacktrace: [
+            // ...
+          ],
+        })
+      }
+    </script>
+    <script src="http://localhost:8080/test.js"></script>
+  </body>
+</html>

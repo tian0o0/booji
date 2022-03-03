@@ -1,0 +1,25 @@
+{
+  "name": "@booji/utils",
+  "version": "0.2.0",
+  "description": "@booji/utils",
+  "author": "xietian",
+  "license": "MIT",
+  "main": "./dist/utils.cjs.js",
+  "module": "./dist/utils.esm.js",
+  "types": "./dist/utils.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c && node ../../build/api-extractor.js utils",
+    "lint": "prettier --write src/**/*",
+    "test": "npm run test:unit",
+    "test:unit": "jest"
+  },
+  "dependencies": {
+    "@booji/types": "0.2.0",
+    "tslib": "^2.3.1"
+  }
+}

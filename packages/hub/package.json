@@ -1,0 +1,24 @@
+{
+  "name": "@booji/hub",
+  "version": "0.2.0",
+  "description": "@booji/hub",
+  "author": "xietian",
+  "license": "MIT",
+  "main": "./dist/hub.cjs.js",
+  "module": "./dist/hub.esm.js",
+  "types": "./dist/hub.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c && node ../../build/api-extractor.js hub",
+    "lint": "prettier --write src/**/*"
+  },
+  "dependencies": {
+    "@booji/types": "0.2.0",
+    "@booji/utils": "0.2.0",
+    "tslib": "^2.3.1"
+  }
+}

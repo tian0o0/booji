@@ -1,0 +1,46 @@
+{
+  "name": "@booji/vue",
+  "version": "0.2.0",
+  "description": "@booji/vue",
+  "author": "xietian",
+  "license": "MIT",
+  "main": "./dist/vue.cjs.js",
+  "module": "./dist/vue.esm.js",
+  "types": "./dist/vue.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c && node ../../build/api-extractor.js vue",
+    "lint": "prettier --write src/**/*"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/*.test.ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "./tsconfig.json",
+        "diagnostics": false
+      }
+    }
+  },
+  "dependencies": {
+    "@booji/browser": "0.2.0",
+    "@booji/hub": "0.2.0",
+    "@booji/types": "0.2.0",
+    "@booji/utils": "0.2.0",
+    "tslib": "^2.3.1"
+  }
+}

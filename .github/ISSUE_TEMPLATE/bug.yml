@@ -1,0 +1,62 @@
+name: 🐞报告Bug
+description: 报告bug，请先查看常见问题及搜索issue列表中有无你要提的问题
+labels: "bug"
+title: "[Bug]: "
+body:
+- type: checkboxes
+  id: check-answer
+  attributes:
+    label: 解决方案检查
+    description: 请确保你已完成以下所有操作
+    options:
+      - label: 我已阅读常见问题(<https://github.com/tian0o0/booji/blob/master/FAQ.md>)，但没有找到解决方案
+        required: true
+      - label: 我已搜索issue列表(<https://github.com/tian0o0/booji/issues>)，并没有发现类似的问题
+        required: true
+- type: textarea
+  id: expected-behavior
+  attributes:
+    label: 预期行为
+    description: 对期望发生的事情的清晰简明描述
+  validations:
+    required: true
+- type: textarea
+  id: actual-behavior
+  attributes:
+    label: 实际行为
+    description: 对实际发生的事情的清晰简明描述
+  validations:
+    required: true
+- type: input
+  id: version
+  attributes:
+    label: Booji版本
+    placeholder: 1.0.0
+  validations:
+    required: true
+- type: input
+  id: os
+  attributes:
+    label: 操作系统版本
+    placeholder: "例如 Windows 10 版本 1909、macOS Catalina 10.15.7 或 Ubuntu 20.04"
+  validations:
+    required: true
+- type: input
+  id: node
+  attributes:
+    label: Node.js版本
+    placeholder: 16.18.3
+  validations:
+    required: true
+- type: input
+  id: package-manager
+  attributes:
+    label: 包管理器及版本
+    placeholder: "例如 pnpm@6.30.1"
+  validations:
+    required: true
+- type: textarea
+  id: additional-information
+  attributes:
+    label: 附加信息
+    description: 如果你的问题需要进一步解释，或者你所遇到的问题不容易重现，请在此处添加更多信息。（直接把图片、视频拖到编辑框即可添加图片或视频）

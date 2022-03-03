@@ -1,0 +1,11 @@
+node_modules
+*-lock.json
+yarn.lock
+*error.log
+*debug.log
+dist
+coverage
+.turbo
+.next
+api-docs
+markdown
