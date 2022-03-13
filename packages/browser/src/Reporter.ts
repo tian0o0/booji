@@ -12,7 +12,7 @@ export class BrowserReporter extends CoreReporter {
   reportByXhr(url: string, data: any) {
     const xhr = new XMLHttpRequest();
     xhr.open("post", url, false);
-    // xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     // xhr.withCredentials = true;
     // if (typeof this.configReportXhr === "function") {
     //   this.configReportXhr(xhr, data);
