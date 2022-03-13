@@ -33,6 +33,7 @@ export class Hub {
    */
   bindClient(client: Client): void {
     this.client = client;
+    this.getScope().appKey = client.getOptions().appKey;
     emitter.emit(client);
   }
   customScope(cb: (scope: Scope) => void): void {

@@ -12,20 +12,19 @@ export class Scope {
    * {@link @booji/types#BreadcrumbItem}
    */
   breadcrumbs: BreadcrumbItem[] = [];
+
+  /**
+   * 项目唯一标识
+   */
+  appKey: string = "";
   /**
    * 自定义用户信息
    */
   user: User = {};
 
-  // workerUrl: string = "";
-
   setUser(user: User) {
     this.user = user;
   }
-
-  // setWorkerUrl(url: string) {
-  //   this.workerUrl = url;
-  // }
 
   /**
    * 面包屑入栈
