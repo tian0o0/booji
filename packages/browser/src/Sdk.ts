@@ -4,6 +4,7 @@ import { BrowserClient } from "./Client";
 import {
   BreadcrumbIntegration,
   GlobalHandlerIntegration,
+  PerformanceIntegration,
 } from "./integrations";
 
 const defaultIntegrations = [
@@ -11,6 +12,7 @@ const defaultIntegrations = [
   new CoreIntegrations.DedupeIntegration(),
   new BreadcrumbIntegration(),
   new GlobalHandlerIntegration(),
+  new PerformanceIntegration(),
 ];
 /**
  *

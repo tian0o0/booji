@@ -71,6 +71,11 @@ export interface BaseOptions {
      */
     queue?: boolean;
   };
+  /**
+   * 是否开启性能监控
+   * @defaultValue `false`
+   */
+  performance?: boolean;
 }
 
 /**
@@ -126,17 +131,6 @@ export interface GlobalHandlerOptions {
    */
   onunhandledrejection?: boolean;
 }
-
-// /**
-//  * Web Worker集成配置项
-//  * @public
-//  */
-// export interface WebWorkerOptions {
-//   /**
-//    * 是否开启Web Worker
-//    */
-//   workerUrl?: string;
-// }
 
 /**
  * 过滤器集成配置项
