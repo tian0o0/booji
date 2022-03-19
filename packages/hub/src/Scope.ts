@@ -4,7 +4,7 @@ import {
   Performance,
   User,
 } from "@booji/types";
-import { Global, logger } from "@booji/utils";
+import { createUserId, Global, logger } from "@booji/utils";
 import { MAX_BREADCRUMBS } from ".";
 
 /**
@@ -30,10 +30,15 @@ export class Scope {
   /**
    * 自定义用户信息
    */
-  user: User = {};
+  user: User = {
+    id: createUserId(),
+  };
 
   setUser(user: User) {
-    this.user = user;
+    this.user = {
+      ...this.user,
+      ...user,
+    };
   }
 
   setPerformance(p: Performance) {

@@ -19,20 +19,9 @@
     <button onclick="pushstate()">pushstate</button>
     <!-- <img src="http://localhost:8080/a.png" id="img"/> -->
     <script>
-      function getUserId() {
-        const BoojiUserId = localStorage.getItem("BoojiUserId")
-        let uuid
-        if(!BoojiUserId) {
-          uuid = Booji.uuid4()
-          localStorage.setItem("BoojiUserId", uuid)
-        } else {
-          uuid = BoojiUserId
-        }
-        return uuid
-      }
       Booji.customScope((scope) => {
         scope.setUser({
-          id: getUserId()
+          name: "xietian"
         })
       })
       Booji.init({

@@ -13,3 +13,4 @@ export { isSupportHistory } from "./support";
 export { htmlElement2String } from "./browser";
 export { logger } from "./logger";
 export { uuid4 } from "./uuid";
+export { createUserId } from "./user";
