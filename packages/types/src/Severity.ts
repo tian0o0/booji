@@ -3,13 +3,11 @@
  * @public
  */
 export enum Severity {
+  Critical = "critical",
   Error = "error",
   Warn = "warn",
-  Log = "log",
   Info = "info",
-  Debug = "debug",
-  Critical = "critical",
-  Fatal = "fatal",
+  Log = "log",
 }
 
 /**
@@ -17,13 +15,11 @@ export enum Severity {
  * @public
  */
 export const SeverityLevels = [
-  "error",
-  "warning",
-  "log",
-  "info",
-  "debug",
   "critical",
-  "fatal",
+  "error",
+  "warn",
+  "info",
+  "log",
 ] as const;
 
 /**
