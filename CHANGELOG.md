@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/tian0o0/booji/compare/v0.2.1...v0.2.2) (2022-04-04)
+
+
+### Features
+
+* **hub:** create unique user id by default ([e8f7288](https://github.com/tian0o0/booji/commit/e8f72882a31c5f6bbf863623f9fa7e2df970b49a))
+
+
+### Bug Fixes
+
+* **type:** Severity ([1142019](https://github.com/tian0o0/booji/commit/11420191205d5f2d052b0434771b1d8ac092846d))
+
 ### 0.2.1 (2022-03-19)
 
 
