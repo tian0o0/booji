@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/tian0o0/booji/compare/v0.2.2...v0.2.3) (2022-04-05)
+
+
+### Bug Fixes
+
+* performance ([0dd795b](https://github.com/tian0o0/booji/commit/0dd795b95714bf72fdf8298279351021e86e7836))
+
 ### [0.2.2](https://github.com/tian0o0/booji/compare/v0.2.1...v0.2.2) (2022-04-04)
 
 
