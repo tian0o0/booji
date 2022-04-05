@@ -72,7 +72,7 @@ export interface BaseOptions {
     queue?: boolean;
   };
   /**
-   * 是否开启性能监控
+   * 是否开启性能监控, 开启后将在页面 performance 数据准备后发送一次请求
    * @defaultValue `false`
    */
   performance?: boolean;

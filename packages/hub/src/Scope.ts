@@ -1,9 +1,4 @@
-import {
-  BreadcrumbItem,
-  EventProcessor,
-  Performance,
-  User,
-} from "@booji/types";
+import { BreadcrumbItem, EventProcessor, User } from "@booji/types";
 import { createUserId, Global, logger } from "@booji/utils";
 import { MAX_BREADCRUMBS } from ".";
 
@@ -24,10 +19,6 @@ export class Scope {
   appKey: string = "";
 
   /**
-   * 性能指标
-   */
-  performace?: Performance;
-  /**
    * 自定义用户信息
    */
   user: User = {
@@ -39,10 +30,6 @@ export class Scope {
       ...this.user,
       ...user,
     };
-  }
-
-  setPerformance(p: Performance) {
-    this.performace = p;
   }
 
   /**

@@ -71,6 +71,10 @@ class PerformanceInstrument {
       load: timing.loadEventEnd - timing.loadEventStart,
     };
 
-    getCurrentHub().getScope().setPerformance(p);
+    const xhr = new XMLHttpRequest();
+    const { dsn, appKey } = getCurrentHub().client.getOptions();
+    xhr.open("post", `${dsn}/performance`, false);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.send(JSON.stringify({ appKey, data: p, url: Global.location.href }));
   }
 }
