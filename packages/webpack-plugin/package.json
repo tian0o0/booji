@@ -1,0 +1,42 @@
+{
+  "name": "@booji/webpack-plugin",
+  "version": "0.2.4",
+  "description": "@booji/webpack-plugin",
+  "author": "xietian",
+  "license": "BSD-3-Clause",
+  "main": "./dist/webpack-plugin.cjs.js",
+  "module": "./dist/webpack-plugin.esm.js",
+  "types": "./dist/webpack-plugin.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c && node ../../build/api-extractor.js webpack-plugin",
+    "lint": "prettier --write src/**/*"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/*.test.ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "./tsconfig.json",
+        "diagnostics": false
+      }
+    }
+  },
+  "dependencies": {
+    "@types/webpack": "^5.28.0"
+  }
+}
