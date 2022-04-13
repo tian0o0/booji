@@ -76,6 +76,11 @@ export interface BaseOptions {
    * @defaultValue `false`
    */
   performance?: boolean;
+  /**
+   * release版本，用于寻找对应版本的 sourcemap
+   * 如果不传，则默认寻找最新版本的 sourcemap
+   */
+  release?: string;
 }
 
 /**

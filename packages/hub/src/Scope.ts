@@ -25,6 +25,11 @@ export class Scope {
     id: createUserId(),
   };
 
+  /**
+   * release版本
+   */
+  release?: string;
+
   setUser(user: User) {
     this.user = {
       ...this.user,

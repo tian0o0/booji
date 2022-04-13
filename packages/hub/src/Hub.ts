@@ -34,6 +34,7 @@ export class Hub {
   bindClient(client: Client): void {
     this.client = client;
     this.scope.appKey = client.getOptions().appKey;
+    this.scope.release = client.getOptions().release;
     emitter.emit(client);
   }
   customScope(cb: (scope: Scope) => void): void {

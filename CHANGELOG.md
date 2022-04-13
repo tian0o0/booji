@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/tian0o0/booji/compare/v0.2.3...v0.2.4) (2022-04-13)
+
+
+### Features
+
+* add stack/row/col in reported event ([71032d1](https://github.com/tian0o0/booji/commit/71032d11c4300d0ad6aabd7bc724d993a4d852c0))
+
 ### [0.2.3](https://github.com/tian0o0/booji/compare/v0.2.2...v0.2.3) (2022-04-05)
 
 
