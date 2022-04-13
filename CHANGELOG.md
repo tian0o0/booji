@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/tian0o0/booji/compare/v0.2.4...v0.3.0) (2022-04-13)
+
+
+### Features
+
+* **webpack-plugin:** add webpack-plugin ([c948dd7](https://github.com/tian0o0/booji/commit/c948dd73397b539dc7d9b3864208308e11b7edbc))
+
 ### [0.2.4](https://github.com/tian0o0/booji/compare/v0.2.3...v0.2.4) (2022-04-13)
 
 
