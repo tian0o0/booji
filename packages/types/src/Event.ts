@@ -20,7 +20,18 @@ export interface Event {
   category?: string;
   level?: Severity;
   message?: string;
+  /**
+   * 错误栈
+   */
   stack?: string;
+  /**
+   * 错误所在行
+   */
+  row?: number;
+  /**
+   * 错误所在列
+   */
+  col?: number;
   timestamp?: number;
   sdk?: SdkInfo;
   breadcrumbs?: BreadcrumbItem[];
