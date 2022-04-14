@@ -15,28 +15,5 @@
     "dev": "rollup -c -w",
     "build": "rollup -c && node ../../build/api-extractor.js webpack-plugin",
     "lint": "prettier --write src/**/*"
-  },
-  "jest": {
-    "collectCoverage": true,
-    "transform": {
-      "^.+\\.ts$": "ts-jest"
-    },
-    "moduleFileExtensions": [
-      "js",
-      "ts"
-    ],
-    "testEnvironment": "jsdom",
-    "testMatch": [
-      "**/*.test.ts"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsconfig": "./tsconfig.json",
-        "diagnostics": false
-      }
-    }
-  },
-  "dependencies": {
-    "@types/webpack": "^5.28.0"
   }
 }

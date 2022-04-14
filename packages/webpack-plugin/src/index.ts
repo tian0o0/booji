@@ -1,16 +1,27 @@
-import { Compiler } from "webpack";
+/**
+ * Booji webpack-plugin
+ * @packageDocumentation
+ */
+
 import { Options } from "./types";
 const http = require("http");
 
 const NAME = "BoojiWebpackPlugin";
 
+/**
+ * @public
+ */
 export default class BoojiWebpackPlugin {
   private readonly options: Options;
+  /**
+   *
+   * @param options {@link Options}
+   */
   constructor(options: Options) {
     this.options = options;
   }
-  apply(compiler: Compiler) {
-    compiler.hooks.emit.tapAsync(NAME, (compilation, cb) => {
+  apply(compiler: any) {
+    compiler.hooks.emit.tapAsync(NAME, (compilation: any, cb: any) => {
       const dist = Object.keys(compilation.assets).filter((file) =>
         file.includes(".js.map")
       );
@@ -20,6 +31,12 @@ export default class BoojiWebpackPlugin {
   }
 }
 
+/**
+ *
+ * @param dist - sourcemap文件名，如：static/js/xxx.js.map
+ * @param options - 配置项
+ * @internal
+ */
 function upload(dist: string[], options: Options) {
   const postData = JSON.stringify({
     appKey: options.appKey,
@@ -29,7 +46,7 @@ function upload(dist: string[], options: Options) {
   });
 
   const req = http.request(
-    "http://localhost:3333/sourcemap",
+    options.reportUrl,
     {
       method: "POST",
       headers: {

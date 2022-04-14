@@ -14,6 +14,7 @@ const config = {
       appKey: "9663a0fa-aec3-441e-85eb-461d66ae1ec3",
       release: "1.0.1",
       url: "http://localhost:3333/",
+      reportUrl: "http://localhost:3333/sourcemap",
     }),
   ],
 };
