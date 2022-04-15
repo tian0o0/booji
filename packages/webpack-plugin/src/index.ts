@@ -21,13 +21,21 @@ export default class BoojiWebpackPlugin {
     this.options = options;
   }
   apply(compiler: any) {
-    compiler.hooks.emit.tapAsync(NAME, (compilation: any, cb: any) => {
+    const callback = (compilation: any, cb: any) => {
       const dist = Object.keys(compilation.assets).filter((file) =>
         file.includes(".js.map")
       );
       upload(dist, this.options);
       cb();
-    });
+    };
+    // 兼容webpack不同版本
+    // compiler.hooks.emit.tapSync: webpack5+仅支持该写法
+    // compiler.plugin('emit')
+    if (compiler.hooks?.emit) {
+      compiler.hooks.emit.tapAsync(NAME, callback);
+    } else {
+      compiler.plugin("emit", callback);
+    }
   }
 }
 
