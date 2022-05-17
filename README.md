@@ -20,6 +20,7 @@
 
 ### Quick Start
 ```ts
+// Now it's unavailable, booji is hosted at personal npm repository
 import { init } from "@booji/browser"
 
 init({
@@ -28,7 +29,7 @@ init({
 })
 ```
 
-### Demo
+### Demo(TODO)
 I have prepared some demos at `stackblitz`:
 - [IIFE DEMO](https://stackblitz.com/edit/web-platform-h6mvwt?embed=1&file=index.html)
 - [Vue2 DEMO]()
@@ -38,6 +39,11 @@ I have prepared some demos at `stackblitz`:
 
 ### Architecture
 
+#### Client Side
+<img src="https://pic.imgdb.cn/item/6278e78009475431294946b0.jpg">
+
+#### Server Side
+<img src="https://pic.imgdb.cn/item/6278e7b3094754312949e1b1.jpg">
 ### Changelogs
 Please see [CHANGELOG.md](https://github.com/tian0o0/booji/blob/master/CHANGELOG.md)
 ### Questions
