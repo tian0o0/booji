@@ -1,16 +1,17 @@
 import { ErrorHandler, Injectable, NgZone } from "@angular/core";
 import { HttpErrorResponse } from "@angular/common/http";
 import { captureException } from "@booji/browser";
+import { runOutsideAngular } from "./Zone";
 /**
  * Angular ErrorHandler
  * @public
  */
-@Injectable()
-export class BoojiErrorHandler implements ErrorHandler {
-  constructor(private ngZone: NgZone) {}
+@Injectable({ providedIn: "root" })
+class BoojiErrorHandler implements ErrorHandler {
+  constructor() {}
   handleError(error: any): void {
     const extractedError = this.extractError(error);
-    this.ngZone.runOutsideAngular(() => captureException(extractedError));
+    runOutsideAngular(() => captureException(extractedError));
   }
 
   private extractError(e: unknown): Error | string {
@@ -45,3 +46,9 @@ export class BoojiErrorHandler implements ErrorHandler {
     return "Unknown angular error";
   }
 }
+
+function createBoojiErrorHandler() {
+  return new BoojiErrorHandler();
+}
+
+export { BoojiErrorHandler, createBoojiErrorHandler };

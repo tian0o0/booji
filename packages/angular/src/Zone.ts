@@ -20,6 +20,6 @@ export function runOutsideAngular<T>(callback: () => T): T {
   // trigger change detection, and `ApplicationRef.tick()` will not be run.
   // Caretaker note: we're using `Zone.root` except `NgZone.runOutsideAngular` since this
   // will require injecting the `NgZone` facade. That will create a breaking change for
-  // projects already using the `@sentry/angular`.
+  // projects already using the `@booji/angular`.
   return isNgZoneEnabled ? Zone.root.run(callback) : callback();
 }

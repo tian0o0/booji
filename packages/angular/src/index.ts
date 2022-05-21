@@ -4,4 +4,4 @@
  */
 export * from "@booji/browser";
 export { init } from "./Sdk";
-export { BoojiErrorHandler } from "./ErrorHandler";
+export { BoojiErrorHandler, createBoojiErrorHandler } from "./ErrorHandler";
