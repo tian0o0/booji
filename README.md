@@ -34,8 +34,8 @@ I have prepared some demos at `stackblitz`:
 - [x] [IIFE DEMO](https://stackblitz.com/edit/booji-iife?file=index.html)
 - [x] [React DEMO](https://stackblitz.com/edit/booji-react?file=index.tsx)
 - [x] [Angular DEMO](https://stackblitz.com/edit/booji-angular?file=src/app/app.module.ts)
-- [ ] [Vue2 DEMO]()
-- [ ] [Vue3 DEMO]()
+- [x] [Vue2 DEMO](https://stackblitz.com/edit/booji-vue2?file=src/main.js)
+- [x] [Vue3 DEMO](https://stackblitz.com/edit/booji-vue3?file=src/main.js)
 
 ### Architecture
 

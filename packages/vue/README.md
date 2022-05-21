@@ -8,9 +8,9 @@
 
 ```ts
 import Vue from "vue"
-import * as Booji from "@booji/vue"
+import { init } from "@booji/vue"
 
-Booji.init({
+init({
   Vue,
   dsn: "xxx",
   appKey: "xxx"
@@ -23,11 +23,11 @@ new Vue({
 
 #### Vue3.x
 ```ts
-import * as Booji from "@booji/vue"
+import { init } from "@booji/vue"
 
 const app = createApp({ //... })
 
-Booji.init({
+init({
   app,
   dsn: "xxx",
   appKey: "xxx"
