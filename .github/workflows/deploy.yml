@@ -47,7 +47,6 @@ jobs:
     - name: 发布Github Pages
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
-        token: ${{ secrets.ACCESS_TOKEN }}
         branch: gh-pages
         folder: markdown/.vuepress/dist
 
