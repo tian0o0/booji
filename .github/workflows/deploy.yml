@@ -28,7 +28,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '16.x'
-        registry-url: 'http://82.156.31.69:4873/'
+        # registry-url: 'http://82.156.31.69:4873/'
         cache: 'pnpm'
     
     - name: 打包/测试

@@ -14,7 +14,7 @@ async function publish(package) {
   const pkg = require(`${cwd}/package.json`);
   if (fse.existsSync(`${cwd}/dist`)) {
     try {
-      await execa("npm", ["publish"], { cwd });
+      await execa("npm", ["publish", "--access=public"], { cwd });
       console.log(`发布成功：@booji/${package}@${pkg.version}`);
     } catch (e) {
       console.log(

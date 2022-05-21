@@ -1,9 +1,9 @@
 <h1 align="center">Booji.js</h1>
 <div align="center">
-<img src="https://avatars.githubusercontent.com/u/76474976?s=96&v=4" width="80" />
+<img src="https://pic.imgdb.cn/item/628879cf0947543129f83caa.png" width="80">
 </div>
 
-<p align="center">A progressive front-end monitor SDK for Web Application.🎉</p>
+<p align="center">A progressive front-end monitor SDK for Web Application.</p>
 
 <p align="center">
 <a href="https://github.com/tian0o0/booji/tags"><img src="https://img.shields.io/github/v/tag/tian0o0/booji?logo=github&style=for-the-badge"/></a>
@@ -16,11 +16,10 @@
 - :gift: **Rich Integrations and Out of the box**
 - :art: **Highly Customizable**
 - :rainbow: **Support `Vue`/`Angular`/`React`**
-- :rocket: **Report in `Web Worker` to avoid block the main thread**
+- :rocket: **Available reporting in `Web Worker` to avoid block the main thread**
 
 ### Quick Start
 ```ts
-// Now it's unavailable, booji is hosted at personal npm repository
 import { init } from "@booji/browser"
 
 init({
@@ -29,22 +28,26 @@ init({
 })
 ```
 
-### Demo(TODO)
+### Demo
 I have prepared some demos at `stackblitz`:
-- [IIFE DEMO](https://stackblitz.com/edit/web-platform-h6mvwt?embed=1&file=index.html)
-- [Vue2 DEMO]()
-- [Vue3 DEMO]()
-- [Angular DEMO]()
-- [React DEMO]()
+- [x] [IIFE DEMO](https://web-platform-ppagvt.stackblitz.io/)
+- [ ] [Vue2 DEMO]()
+- [ ] [Vue3 DEMO]()
+- [ ] [Angular DEMO]()
+- [ ] [React DEMO]()
 
 ### Architecture
 
 #### Client Side
-<img src="https://pic.imgdb.cn/item/6278e78009475431294946b0.jpg">
+![](https://pic.imgdb.cn/item/6278e78009475431294946b0.jpg)
 
 #### Server Side
-<img src="https://pic.imgdb.cn/item/6278e7b3094754312949e1b1.jpg">
+![](https://pic.imgdb.cn/item/6278e7b3094754312949e1b1.jpg)
+
 ### Changelogs
+
 Please see [CHANGELOG.md](https://github.com/tian0o0/booji/blob/master/CHANGELOG.md)
+
 ### Questions
+
 Please see [FAQ.md](https://github.com/tian0o0/booji/blob/master/FAQ.md)
