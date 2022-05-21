@@ -31,11 +31,11 @@ init({
 
 ### Demo
 I have prepared some demos at `stackblitz`:
-- [x] [IIFE DEMO](https://booji-iife.stackblitz.io/)
-- [x] [React DEMO](https://booji-react.stackblitz.io/)
+- [x] [IIFE DEMO](https://stackblitz.com/edit/booji-iife?file=index.html)
+- [x] [React DEMO](https://stackblitz.com/edit/booji-react?file=index.tsx)
+- [x] [Angular DEMO](https://stackblitz.com/edit/booji-angular?file=src/app/app.module.ts)
 - [ ] [Vue2 DEMO]()
 - [ ] [Vue3 DEMO]()
-- [ ] [Angular DEMO]()
 
 ### Architecture
 

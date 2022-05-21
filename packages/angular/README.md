@@ -31,14 +31,14 @@ platformBrowserDynamic()
 
 ```ts
 import { NgModule, ErrorHandler } from '@angular/core';
-import { BoojiErrorHandler } from '@booji/angular';
+import { createBoojiErrorHandler } from '@booji/angular';
 
 @NgModule({
   // ...
   providers: [
     {
       provide: ErrorHandler,
-      useClass: BoojiErrorHandler,
+      useValue: createBoojiErrorHandler(),
     },
   ],
   // ...
