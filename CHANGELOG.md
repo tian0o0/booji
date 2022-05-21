@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.4](https://github.com/tian0o0/booji/compare/v0.3.3...v0.3.4) (2022-05-21)
+
+
+### Bug Fixes
+
+* **react:** add `children` props for react 18+ ([3e48029](https://github.com/tian0o0/booji/commit/3e480296fc88879f12fde75679833fae1868ea13))
+
 ### [0.3.3](https://github.com/tian0o0/booji/compare/v0.3.2...v0.3.3) (2022-04-22)
 
 ### [0.3.2](https://github.com/tian0o0/booji/compare/v0.3.1...v0.3.2) (2022-04-15)
