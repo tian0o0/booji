@@ -9,9 +9,9 @@
 ```tsx
 import React from "react"
 import ReactDOM from "react-dom";
-import Booji from "@booji/react"
+import { init } from "@booji/react"
 
-Booji.init({
+init({
   dsn: "xxx",
   appKey: "xxx"
 })
