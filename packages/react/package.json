@@ -1,6 +1,6 @@
 {
   "name": "@booji/react",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "@booji/react",
   "author": "xietian",
   "license": "BSD-3-Clause",
@@ -37,8 +37,8 @@
     }
   },
   "dependencies": {
-    "@booji/browser": "0.3.7",
-    "@booji/types": "0.3.7",
+    "@booji/browser": "0.3.8",
+    "@booji/types": "0.3.8",
     "tslib": "^2.3.1"
   },
   "peerDependencies": {

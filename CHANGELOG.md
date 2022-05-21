@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.8](https://github.com/tian0o0/booji/compare/v0.3.7...v0.3.8) (2022-05-21)
+
+
+### Bug Fixes
+
+* **angular:** change way of export ([da201bf](https://github.com/tian0o0/booji/commit/da201bf3af35daf2ca78a6ecc9a2dd31e5b9e6a4))
+
 ### [0.3.7](https://github.com/tian0o0/booji/compare/v0.3.6...v0.3.7) (2022-05-21)
 
 
