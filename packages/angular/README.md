@@ -9,11 +9,11 @@
 ```ts
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import Booji from '@booji/angular';
+import { init } from '@booji/angular';
 
 import { AppModule } from './app/app.module';
 
-Booji.init({
+init({
   dsn: "xxx",
   appKey: "xxx"
 });

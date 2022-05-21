@@ -1,10 +1,11 @@
-import { ErrorHandler, NgZone } from "@angular/core";
+import { ErrorHandler, Injectable, NgZone } from "@angular/core";
 import { HttpErrorResponse } from "@angular/common/http";
 import { captureException } from "@booji/browser";
 /**
  * Angular ErrorHandler
  * @public
  */
+@Injectable()
 export class BoojiErrorHandler implements ErrorHandler {
   constructor(private ngZone: NgZone) {}
   handleError(error: any): void {
