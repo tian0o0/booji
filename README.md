@@ -37,6 +37,10 @@ I have prepared some demos at `stackblitz`:
 - [x] [Vue2 DEMO](https://stackblitz.com/edit/booji-vue2?file=src/main.js)
 - [x] [Vue3 DEMO](https://stackblitz.com/edit/booji-vue3?file=src/main.js)
 
+### API Reference
+
+Please see [API DOCS](https://tian0o0.github.io/booji/)
+
 ### Architecture
 
 #### Client Side
