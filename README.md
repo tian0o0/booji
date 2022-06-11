@@ -37,10 +37,6 @@ I have prepared some demos at `stackblitz`:
 - [x] [Vue2 DEMO](https://stackblitz.com/edit/booji-vue2?file=src/main.js)
 - [x] [Vue3 DEMO](https://stackblitz.com/edit/booji-vue3?file=src/main.js)
 
-### API Reference
-
-Please see [API DOCS](https://tian0o0.github.io/booji/)
-
 ### Architecture
 
 #### Client Side
@@ -49,6 +45,10 @@ Please see [API DOCS](https://tian0o0.github.io/booji/)
 #### Server Side
 ![](https://raw.githubusercontent.com/tian0o0/pic/master/20220521181739.png)
 
+### API Reference
+
+Please see [API DOCS](https://tian0o0.github.io/booji/)
+
 ### Changelogs
 
 Please see [CHANGELOG.md](https://github.com/tian0o0/booji/blob/master/CHANGELOG.md)
@@ -56,3 +56,6 @@ Please see [CHANGELOG.md](https://github.com/tian0o0/booji/blob/master/CHANGELOG
 ### Questions
 
 Please see [FAQ.md](https://github.com/tian0o0/booji/blob/master/FAQ.md)
+
+### Reference
+[Booji Server](https://github.com/tian0o0/booji-server/blob/master/README.md)
