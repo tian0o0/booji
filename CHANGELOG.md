@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.9](https://github.com/tian0o0/booji/compare/v0.3.8...v0.3.9) (2022-06-19)
+
+
+### Bug Fixes
+
+* add stack field ([41887b3](https://github.com/tian0o0/booji/commit/41887b3cd7532908ec81e20a737617dfe07412a3))
+
 ### [0.3.8](https://github.com/tian0o0/booji/compare/v0.3.7...v0.3.8) (2022-05-21)
 
 
