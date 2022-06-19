@@ -1,7 +1,13 @@
-import { ErrorHandler, Injectable, NgZone } from "@angular/core";
+import { ErrorHandler, Injectable } from "@angular/core";
 import { HttpErrorResponse } from "@angular/common/http";
-import { captureException } from "@booji/browser";
 import { runOutsideAngular } from "./Zone";
+import { getCurrentHub } from "@booji/hub";
+import {
+  BrowserBreadcrumbCategory,
+  BrowserBreadcrumbType,
+  Event,
+  Severity,
+} from "@booji/types";
 /**
  * Angular ErrorHandler
  * @public
@@ -11,7 +17,23 @@ class BoojiErrorHandler implements ErrorHandler {
   constructor() {}
   handleError(error: any): void {
     const extractedError = this.extractError(error);
-    runOutsideAngular(() => captureException(extractedError));
+    runOutsideAngular(() => {
+      this.report(extractedError);
+    });
+  }
+
+  private report(error: Error | string) {
+    const isString = typeof error === "string";
+
+    const event: Event = {
+      type: BrowserBreadcrumbType.Error,
+      category: BrowserBreadcrumbCategory.CodeError,
+      message: isString ? error : `${error.name}: ${error.message}`,
+      level: Severity.Error,
+      timestamp: Date.now(),
+      stack: isString ? "" : error.stack,
+    };
+    getCurrentHub().captureEvent(event);
   }
 
   private extractError(e: unknown): Error | string {

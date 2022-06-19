@@ -1,3 +1,10 @@
+import { getCurrentHub } from "@booji/hub";
+import {
+  BrowserBreadcrumbCategory,
+  BrowserBreadcrumbType,
+  Event,
+  Severity,
+} from "@booji/types";
 import { Component, ReactNode } from "react";
 
 interface ErrorBoundaryProps {
@@ -31,6 +38,16 @@ export class ErrorBoundary extends Component<
     this.setState({
       error: true,
     });
+
+    const event: Event = {
+      type: BrowserBreadcrumbType.Error,
+      category: BrowserBreadcrumbCategory.CodeError,
+      message: `${error.name}: ${error.message}`,
+      level: Severity.Error,
+      timestamp: Date.now(),
+      stack: error.stack,
+    };
+    getCurrentHub().captureEvent(event);
   }
 
   render() {

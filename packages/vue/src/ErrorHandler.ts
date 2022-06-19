@@ -27,6 +27,7 @@ function handle(error: Error, vm: ViewModel, info: string): void {
     message: `${error.name}: ${error.message} [${info}] ${componentName}`,
     level: Severity.Error,
     timestamp: Date.now(),
+    stack: error.stack,
   };
   getCurrentHub().captureEvent(event);
 }
