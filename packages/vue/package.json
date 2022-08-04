@@ -1,6 +1,6 @@
 {
   "name": "@booji/vue",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "description": "@booji/vue",
   "author": "xietian",
   "license": "BSD-3-Clause",
@@ -37,10 +37,10 @@
     }
   },
   "dependencies": {
-    "@booji/browser": "0.3.9",
-    "@booji/hub": "0.3.9",
-    "@booji/types": "0.3.9",
-    "@booji/utils": "0.3.9",
+    "@booji/browser": "0.3.10",
+    "@booji/hub": "0.3.10",
+    "@booji/types": "0.3.10",
+    "@booji/utils": "0.3.10",
     "tslib": "^2.3.1"
   }
 }
