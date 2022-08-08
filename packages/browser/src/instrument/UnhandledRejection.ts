@@ -13,7 +13,7 @@ import { getCurrentHub } from "@booji/hub";
  */
 export class UnhandledRejectionInstrument {
   static setup(): void {
-    Global.onunhandledrejection = (e: any) => {
+    Global.onunhandledrejection = (e: PromiseRejectionEvent) => {
       UnhandledRejectionInstrument.handle(e.reason);
       return true;
     };

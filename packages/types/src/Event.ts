@@ -1,4 +1,10 @@
-import { BreadcrumbItem, SdkInfo, Severity } from ".";
+import {
+  BreadcrumbItem,
+  BrowserBreadcrumbType,
+  BrowserBreadcrumbCategory,
+  SdkInfo,
+  Severity,
+} from ".";
 /**
  * 事件接口
  * @public
@@ -16,29 +22,42 @@ export interface Event {
    * uuid，每个eventId都不相同
    */
   eventId?: string;
-  type?: string;
-  category?: string;
+  /**
+   * 事件类型
+   */
+  type?: BrowserBreadcrumbType;
+  /**
+   * 事件分类
+   */
+  category?: BrowserBreadcrumbCategory;
+  /**
+   * 事件等级
+   */
   level?: Severity;
+  /**
+   * 报错信息
+   */
   message?: string;
   /**
    * 错误栈
    */
   stack?: string;
   /**
-   * 错误所在行
+   * 事件发生的时间戳
    */
-  row?: number;
-  /**
-   * 错误所在列
-   */
-  col?: number;
   timestamp?: number;
-  sdk?: SdkInfo;
+  /**
+   * 事件发生时的用户行为栈
+   */
   breadcrumbs?: BreadcrumbItem[];
   /**
    * 事件发生时的url
    */
   url?: string;
+  /**
+   * 事件对应的SDK Info
+   */
+  sdk?: SdkInfo;
 }
 
 /**

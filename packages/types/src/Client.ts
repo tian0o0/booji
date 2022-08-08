@@ -1,4 +1,4 @@
-import { Options, Severity } from ".";
+import { Options, Severity, Event } from ".";
 
 /**
  * 各个端的客户端需要实现该接口

@@ -71,8 +71,6 @@ function handleCodeError(event: ErrorEvent) {
     message: `${message} at ${filename}, ${lineno}行, ${colno}列`,
     timestamp: Date.now(),
     stack: error.stack,
-    row: lineno,
-    col: colno,
   };
   getCurrentHub().captureEvent(r);
 }
