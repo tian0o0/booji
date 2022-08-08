@@ -1,6 +1,6 @@
 {
   "name": "@booji/worker",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "description": "@booji/worker",
   "author": "xietian",
   "license": "BSD-3-Clause",
@@ -17,9 +17,9 @@
     "lint": "prettier --write src/**/*"
   },
   "dependencies": {
-    "@booji/hub": "0.3.10",
-    "@booji/types": "0.3.10",
-    "@booji/utils": "0.3.10",
+    "@booji/hub": "0.3.11",
+    "@booji/types": "0.3.11",
+    "@booji/utils": "0.3.11",
     "tslib": "^2.3.1"
   }
 }
