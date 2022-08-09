@@ -10,6 +10,7 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": false,
+    "preserveConstEnums": true,
     "baseUrl": ".",
     "paths": {
       "@booji/core": ["packages/core/src"],

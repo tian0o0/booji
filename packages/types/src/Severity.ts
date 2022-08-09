@@ -2,7 +2,7 @@
  * 等级枚举
  * @public
  */
-export enum Severity {
+export const enum Severity {
   Critical = "critical",
   Error = "error",
   Warn = "warn",

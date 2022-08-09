@@ -2,7 +2,7 @@
  * 面包屑类型
  * @public
  */
-export enum BrowserBreadcrumbType {
+export const enum BrowserBreadcrumbType {
   Http = "Http Request",
   User = "User Action",
   Route = "Route",
@@ -15,7 +15,7 @@ export enum BrowserBreadcrumbType {
  * 面包屑分类
  * @public
  */
-export enum BrowserBreadcrumbCategory {
+export const enum BrowserBreadcrumbCategory {
   Xhr = "Xhr",
   Fetch = "Fecth",
   Click = "Ui.Click",
