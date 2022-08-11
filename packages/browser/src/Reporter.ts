@@ -11,7 +11,7 @@ export class BrowserReporter extends CoreReporter {
   private webWorker?: { url: string; queue?: boolean };
   reportByXhr(url: string, data: any) {
     const xhr = new XMLHttpRequest();
-    xhr.open("post", url, false);
+    xhr.open("post", url, true);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     // xhr.withCredentials = true;
     // if (typeof this.configReportXhr === "function") {
