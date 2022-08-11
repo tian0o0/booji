@@ -32,6 +32,14 @@ export class BrowserReporter extends CoreReporter {
     this.worker = this.worker || new Worker(this.webWorker?.url as string);
     this.worker.postMessage({ event, dsn });
   }
+  reportByBeacon(dsn: string, data: any) {
+    // Content-Type only allows: application/x-www-form-urlencoded、multipart/form-data、text/plain
+    const fd = new FormData();
+    for (const key in data) {
+      fd.append(key, data[key]);
+    }
+    navigator.sendBeacon(dsn, fd);
+  }
   reportBy(dsn: string, event: Event) {
     const { webWorker } = getCurrentHub().client.getOptions();
     this.webWorker = webWorker;

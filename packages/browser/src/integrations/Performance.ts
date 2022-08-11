@@ -1,7 +1,7 @@
 import { getCurrentHub } from "@booji/hub";
 import { Client, Integration, Options, Performance } from "@booji/types";
 import { emitter, Global, logger } from "@booji/utils";
-
+import { BrowserReporter } from "../Reporter";
 /**
  * 性能监控集成
  * @remarks
@@ -71,10 +71,18 @@ class PerformanceInstrument {
       load: timing.loadEventEnd - timing.loadEventStart,
     };
 
-    const xhr = new XMLHttpRequest();
+    const reporter = new BrowserReporter();
+    const report = Global.navigator
+      ? reporter.reportByBeacon
+      : reporter.reportByXhr;
     const { dsn, appKey } = getCurrentHub().client.getOptions();
-    xhr.open("post", `${dsn}/performance`, false);
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhr.send(JSON.stringify({ appKey, data: p, url: Global.location.href }));
+
+    const payload = {
+      appKey,
+      data: JSON.stringify(p),
+      url: Global.location.href,
+    };
+
+    report(`${dsn}/performance`, payload);
   }
 }
