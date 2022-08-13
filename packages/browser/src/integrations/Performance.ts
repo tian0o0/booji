@@ -71,10 +71,7 @@ class PerformanceInstrument {
       load: timing.loadEventEnd - timing.loadEventStart,
     };
 
-    const reporter = new BrowserReporter();
-    const report = Global.navigator
-      ? reporter.reportByBeacon
-      : reporter.reportByXhr;
+    const { reportByBeacon } = new BrowserReporter();
     const { dsn, appKey } = getCurrentHub().client.getOptions();
 
     const payload = {
@@ -83,6 +80,6 @@ class PerformanceInstrument {
       url: Global.location.href,
     };
 
-    report(`${dsn}/performance`, payload);
+    reportByBeacon(`${dsn}/performance`, payload);
   }
 }
