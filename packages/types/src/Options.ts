@@ -33,7 +33,9 @@ export interface BaseOptions {
   integrations?: Integration[];
 
   /**
-   * 自定义钩子函数，用于在事件上报前修改事件（如果返回null, 将忽略本次事件上报）
+   * 自定义钩子函数，用于在事件上报前修改事件
+   *
+   * 注意：如果返回null, 将忽略本次事件上报
    *
    * @param event - 上报的事件
    * @returns 修改后的事件/null
@@ -41,15 +43,12 @@ export interface BaseOptions {
   beforeReport?: (event: Event) => Promise<Event | null> | Event | null;
 
   /**
-   * A callback invoked when adding a breadcrumb, allowing to optionally modify
-   * it before adding it to future events.
+   * 自定义钩子函数，用于在面包屑入栈时修改面包屑数据
+   * 必须返回一个合法的面包屑数据。如果不希望修改面包屑数据，只需将其原样返回即可
+   * 注意：如果返回null, 将忽略该面包屑
    *
-   * Note that you must return a valid breadcrumb from this callback. If you do
-   * not wish to modify the breadcrumb, simply return it at the end.
-   * Returning null will cause the breadcrumb to be dropped.
-   *
-   * @param breadcrumb - The breadcrumb as created by the SDK.
-   * @returns The breadcrumb that will be added | null.
+   * @param breadcrumb - 面包屑数据.
+   * @returns 修改后的面包屑数据null.
    */
   beforeAddBreadcrumb?: (breadcrumb: BreadcrumbItem) => BreadcrumbItem | null;
   /**
@@ -60,7 +59,7 @@ export interface BaseOptions {
   /**
    * 是否开启Web Worker, 默认不开启
    */
-  webWorker?: {
+  worker?: {
     /**
      * Web Worker URL
      */

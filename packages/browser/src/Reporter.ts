@@ -41,8 +41,8 @@ export class BrowserReporter extends CoreReporter {
     navigator.sendBeacon(dsn, fd);
   }
   reportBy(dsn: string, event: Event) {
-    const { webWorker } = getCurrentHub().client.getOptions();
-    this.webWorker = webWorker;
+    const { worker } = getCurrentHub().client.getOptions();
+    this.webWorker = worker;
     if (this.webWorker) {
       this.reportByWorker(dsn, event);
     } else {
