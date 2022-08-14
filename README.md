@@ -1,7 +1,6 @@
 <h1 align="center">Booji.js</h1>
 <div align="center">
-<img src="https://raw.githubusercontent.com/tian0o0/pic/master/icon.png" width="80">
-
+<img src="https://raw.githubusercontent.com/tian0o0/pic/master/booji.PNG" width="150">
 </div>
 
 <p align="center">A progressive front-end monitor SDK for Web Application.</p>
