@@ -57,5 +57,6 @@ export abstract class CoreReporter implements Reporter {
    */
   afterEventReady(): void {
     getCurrentHub().scope.clearBreadcrumb();
+    getCurrentHub().scope.clearPlayback();
   }
 }

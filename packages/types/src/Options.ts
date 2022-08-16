@@ -179,6 +179,15 @@ export interface VueOptions {
 }
 
 /**
+ * 用户行为回放配置项
+ * @public
+ */
+export interface PlaybackOptions {
+  playback?: boolean;
+  maxPlaybacks?: number;
+}
+
+/**
  * Booji通用配置项
  * @public
  */
@@ -187,4 +196,5 @@ export type Options = BaseOptions &
   GlobalHandlerOptions &
   InboundFilterOptions &
   DedupeOptions &
-  VueOptions;
+  VueOptions &
+  PlaybackOptions;

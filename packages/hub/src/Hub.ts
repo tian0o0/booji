@@ -1,6 +1,13 @@
-import { BreadcrumbItem, Client, Event, Options, Severity } from "@booji/types";
+import {
+  BreadcrumbItem,
+  Client,
+  Event,
+  Options,
+  Playback,
+  Severity,
+} from "@booji/types";
 import { emitter, Global, logger } from "@booji/utils";
-import { Scope, MAX_BREADCRUMBS } from ".";
+import { Scope, MAX_BREADCRUMBS, MAX_PLAYBACKS } from ".";
 
 /**
  * 控制中心
@@ -67,6 +74,13 @@ export class Hub {
     }
 
     this.scope.addBreadcrumb(_breadcrumb, maxBreadcrumbs);
+  }
+  collectPlayback(playback: Playback) {
+    const { maxPlaybacks = MAX_PLAYBACKS }: Options = this.client.getOptions();
+
+    if (maxPlaybacks <= 0) return;
+
+    this.scope.collectPlayback(playback, maxPlaybacks);
   }
   /**
    * 捕获事件

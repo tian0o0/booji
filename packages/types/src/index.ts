@@ -17,3 +17,4 @@ export * from "./EventProcessor";
 export * from "./User";
 export * from "./Vue";
 export * from "./Performance";
+export * from "./Playback";

@@ -21,6 +21,9 @@ export default {
       name: "Booji",
       file: "./dist/browser.min.js",
       format: "iife",
+      globals: {
+        rrweb: "rrweb",
+      },
     },
   ],
   plugins: [
@@ -30,4 +33,5 @@ export default {
     }),
     terser(),
   ],
+  external: ["rrweb"],
 };

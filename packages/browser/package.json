@@ -41,6 +41,7 @@
     "@booji/hub": "0.4.2",
     "@booji/types": "0.4.2",
     "@booji/utils": "0.4.2",
+    "rrweb": "^2.0.0-alpha.1",
     "tslib": "^2.3.1"
   }
 }

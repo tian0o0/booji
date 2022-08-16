@@ -5,6 +5,7 @@ import {
   BreadcrumbIntegration,
   GlobalHandlerIntegration,
   PerformanceIntegration,
+  PlaybackIntegration,
 } from "./integrations";
 
 const defaultIntegrations = [
@@ -13,6 +14,7 @@ const defaultIntegrations = [
   new BreadcrumbIntegration(),
   new GlobalHandlerIntegration(),
   new PerformanceIntegration(),
+  new PlaybackIntegration(),
 ];
 /**
  *
