@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/tian0o0/booji/compare/v0.4.2...v0.5.0) (2022-08-16)
+
+
+### Features
+
+* **@booji/browser:** collect playback data ([ce2779c](https://github.com/tian0o0/booji/commit/ce2779cdb02a63805f06ef3dac146f1be05bdddb)), closes [#3](https://github.com/tian0o0/booji/issues/3)
+
 ### [0.4.2](https://github.com/tian0o0/booji/compare/v0.4.1...v0.4.2) (2022-08-16)
 
 ### [0.4.1](https://github.com/tian0o0/booji/compare/v0.4.0...v0.4.1) (2022-08-13)
