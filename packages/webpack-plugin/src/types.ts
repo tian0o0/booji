@@ -18,7 +18,7 @@ export interface Options {
   /**
    * sourcemap静态资源所托管的cdn
    */
-  url: string;
+  cdn: string;
   /**
    * 上传sourcemap文件名的接口
    */

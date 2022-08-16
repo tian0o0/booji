@@ -49,7 +49,7 @@ function upload(dist: string[], options: Options) {
   const postData = JSON.stringify({
     appKey: options.appKey,
     release: options.release,
-    url: options.url,
+    cdn: options.cdn,
     dist,
   });
 
@@ -64,7 +64,7 @@ function upload(dist: string[], options: Options) {
     },
     () => {
       console.log(
-        `SourceMap文件名已上传至Booji，请确保${options.url}下可以访问SourceMap文件`
+        `SourceMap文件名已上传至Booji，请确保${options.cdn}下可以访问SourceMap文件`
       );
     }
   );
