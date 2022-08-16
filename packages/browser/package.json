@@ -1,6 +1,6 @@
 {
   "name": "@booji/browser",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "@booji/browser",
   "author": "xietian",
   "license": "BSD-3-Clause",
@@ -37,10 +37,10 @@
     }
   },
   "dependencies": {
-    "@booji/core": "0.4.1",
-    "@booji/hub": "0.4.1",
-    "@booji/types": "0.4.1",
-    "@booji/utils": "0.4.1",
+    "@booji/core": "0.4.2",
+    "@booji/hub": "0.4.2",
+    "@booji/types": "0.4.2",
+    "@booji/utils": "0.4.2",
     "tslib": "^2.3.1"
   }
 }
