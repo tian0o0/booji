@@ -1,7 +1,14 @@
 import { getCurrentHub } from "@booji/hub";
 import { Client, Integration, Playback, PlaybackOptions } from "@booji/types";
-import { emitter } from "@booji/utils";
+import { emitter, Queue } from "@booji/utils";
 import { record } from "rrweb";
+
+/**
+ * 最大回放数据量
+ * @internal
+ */
+export const MAX_PLAYBACKS = 10;
+
 /**
  *
  * 用户行为回放集成
@@ -26,9 +33,13 @@ export class PlaybackIntegration implements Integration {
    * {@inheritDoc  @booji/types#Integration.onClientBinded}
    */
   onClientBinded(client: Client) {
-    const { playback = false }: PlaybackOptions = client.getOptions();
+    const { playback = false, maxPlaybacks = MAX_PLAYBACKS }: PlaybackOptions =
+      client.getOptions();
 
-    playback && PlaybackInstrument.setup();
+    if (playback && maxPlaybacks > 0) {
+      const queue = new Queue<Playback>(maxPlaybacks);
+      PlaybackInstrument.setup(queue);
+    }
   }
 }
 
@@ -37,15 +48,11 @@ export class PlaybackIntegration implements Integration {
  * @internal
  */
 class PlaybackInstrument {
-  static setup() {
+  static setup(queue: Queue<Playback>) {
     record({
       emit(playback: Playback) {
-        PlaybackInstrument.handle(playback);
+        getCurrentHub().collectPlayback(playback, queue);
       },
     });
-  }
-
-  static handle(playback: Playback) {
-    getCurrentHub().collectPlayback(playback);
   }
 }

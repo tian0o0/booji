@@ -23,6 +23,7 @@ export default {
       format: "iife",
       globals: {
         rrweb: "rrweb",
+        // rrweb: "rrwebRecord",
       },
     },
   ],

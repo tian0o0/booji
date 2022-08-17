@@ -9,6 +9,7 @@ export * from "./severity";
 export * from "./is";
 export * from "./hash";
 export * from "./emitter";
+export * from "./queue";
 export { isSupportHistory } from "./support";
 export { htmlElement2String } from "./browser";
 export { logger } from "./logger";

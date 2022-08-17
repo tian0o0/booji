@@ -1,6 +1,12 @@
 import { BreadcrumbItem, EventProcessor, Playback, User } from "@booji/types";
-import { createUserId, Global, logger } from "@booji/utils";
-import { MAX_BREADCRUMBS, MAX_PLAYBACKS } from ".";
+import {
+  createUserId,
+  Global,
+  logger,
+  Queue,
+  linkedList2array,
+} from "@booji/utils";
+import { MAX_BREADCRUMBS } from ".";
 
 /**
  * 作用域类
@@ -18,6 +24,12 @@ export class Scope {
    * {@link @booji/types#Playback}
    */
   playbacks: Playback[] = [];
+
+  /**
+   * 用户行为队列
+   * @internal
+   */
+  playbackQueue?: Queue<Playback>;
 
   /**
    * 项目唯一标识
@@ -65,9 +77,10 @@ export class Scope {
    * 收集用户行为轨迹
    * @param playback - {@link @booji/types#Playback}
    */
-  collectPlayback(playback: Playback, maxPlaybacks: number) {
-    const max = Math.min(maxPlaybacks, MAX_PLAYBACKS);
-    this.playbacks = [...this.playbacks, playback].slice(-max);
+  collectPlayback(playback: Playback, queue: Queue<Playback>) {
+    this.playbackQueue = queue;
+    queue.enqueue(playback);
+    this.playbacks = linkedList2array(queue.head);
     logger.log(this.playbacks);
   }
 
@@ -75,6 +88,7 @@ export class Scope {
    * 清空用户行为轨迹
    */
   clearPlayback() {
+    this.playbackQueue?.clear();
     this.playbacks = [];
   }
 }

@@ -11,14 +11,17 @@ export abstract class CoreReporter implements Reporter {
    * {@inheritDoc @booji/types#Reporter.beforeReport}
    */
   async beforeReport(event: Event): Promise<Event | null> {
+    const { scope, client } = getCurrentHub();
+    // `playbackQueue` needn't report
+    const { playbackQueue, ...res } = scope;
     // Generate eventId/eventHash/issueId
     event.eventId = uuid4();
-    event.eventHash = createHash(event, getCurrentHub().scope.user);
+    event.eventHash = createHash(event, res.user);
     event.issueId = createHash(event);
     // Attach scope to event
     event = {
       ...event,
-      ...getCurrentHub().scope,
+      ...res,
     };
 
     // Drop event if necessary
@@ -28,7 +31,7 @@ export abstract class CoreReporter implements Reporter {
     if (shouldDropEvent) return Promise.resolve(null);
 
     // Check custom `beforeReport` hook
-    const customBeforeReport = getCurrentHub().client.getOptions().beforeReport;
+    const customBeforeReport = client.getOptions().beforeReport;
     if (customBeforeReport) {
       if (typeof customBeforeReport === "function") {
         const customEvent = await customBeforeReport(event);
