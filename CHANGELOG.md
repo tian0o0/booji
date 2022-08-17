@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [](https://github.com/tian0o0/booji/compare/v0.5.0...v) (2022-08-17)
+
 ## [0.5.0](https://github.com/tian0o0/booji/compare/v0.4.2...v0.5.0) (2022-08-16)
 
 

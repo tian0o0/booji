@@ -1,6 +1,6 @@
 {
   "name": "@booji/browser",
-  "version": "0.5.0",
+  "version": "null",
   "description": "@booji/browser",
   "author": "xietian",
   "license": "BSD-3-Clause",
@@ -37,10 +37,10 @@
     }
   },
   "dependencies": {
-    "@booji/core": "0.5.0",
-    "@booji/hub": "0.5.0",
-    "@booji/types": "0.5.0",
-    "@booji/utils": "0.5.0",
+    "@booji/core": "null",
+    "@booji/hub": "null",
+    "@booji/types": "null",
+    "@booji/utils": "null",
     "rrweb": "^2.0.0-alpha.1",
     "tslib": "^2.3.1"
   }

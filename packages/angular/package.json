@@ -1,6 +1,6 @@
 {
   "name": "@booji/angular",
-  "version": "0.5.0",
+  "version": "null",
   "description": "@booji/angular",
   "author": "xietian",
   "license": "BSD-3-Clause",
@@ -37,8 +37,8 @@
     }
   },
   "dependencies": {
-    "@booji/browser": "0.5.0",
-    "@booji/types": "0.5.0",
+    "@booji/browser": "null",
+    "@booji/types": "null",
     "tslib": "^2.3.1"
   },
   "peerDependencies": {
