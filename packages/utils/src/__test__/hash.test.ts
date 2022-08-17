@@ -1,4 +1,4 @@
-import { Event } from "packages/types/src";
+import { Event } from "@booji/types";
 import { createHash } from "..";
 
 describe("hash code", () => {
