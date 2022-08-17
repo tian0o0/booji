@@ -43,20 +43,6 @@ export interface BaseOptions {
   beforeReport?: (event: Event) => Promise<Event | null> | Event | null;
 
   /**
-   * 自定义钩子函数，用于在面包屑入栈时修改面包屑数据
-   * 必须返回一个合法的面包屑数据。如果不希望修改面包屑数据，只需将其原样返回即可
-   * 注意：如果返回null, 将忽略该面包屑
-   *
-   * @param breadcrumb - 面包屑数据.
-   * @returns 修改后的面包屑数据null.
-   */
-  beforeAddBreadcrumb?: (breadcrumb: BreadcrumbItem) => BreadcrumbItem | null;
-  /**
-   * 最大面包屑栈
-   * @defaultValue 10
-   */
-  maxBreadcrumbs?: number;
-  /**
    * 是否开启Web Worker, 默认不开启
    */
   worker?: {
@@ -117,6 +103,20 @@ export interface BreadcrumbOptions {
    * @defaultValue `true`
    */
   hashchange?: boolean;
+  /**
+   * 最大面包屑栈
+   * @defaultValue 10
+   */
+  maxBreadcrumbs?: number;
+  /**
+   * 自定义钩子函数，用于在面包屑入栈时修改面包屑数据
+   * 必须返回一个合法的面包屑数据。如果不希望修改面包屑数据，只需将其原样返回即可
+   * 注意：如果返回null, 将忽略该面包屑
+   *
+   * @param breadcrumb - 面包屑数据
+   * @returns 修改后的面包屑数据null
+   */
+  beforeAddBreadcrumb?: (breadcrumb: BreadcrumbItem) => BreadcrumbItem | null;
 }
 
 /**
@@ -183,7 +183,15 @@ export interface VueOptions {
  * @public
  */
 export interface PlaybackOptions {
+  /**
+   * 是否记录用户行为轨迹
+   * @defaultValue `false`
+   */
   playback?: boolean;
+  /**
+   * 最大回放数据量
+   * @defaultValue 100
+   */
   maxPlaybacks?: number;
 }
 

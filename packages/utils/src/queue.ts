@@ -42,10 +42,10 @@ export class Queue<T> {
   }
 
   enqueue(item: T): void {
+    if (this.size >= this.maxSize) return;
+
     // 新建节点
     const node = new QueueNode(item);
-
-    if (this.size >= this.maxSize) return;
 
     // 入列其实就是改变Queue类的3个属性，如果队列为空时head即为新节点
     if (this.isEmpty()) {
