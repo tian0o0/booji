@@ -1,6 +1,6 @@
 {
   "name": "@booji/core",
-  "version": "null",
+  "version": "1.0.1-alpha.1",
   "description": "@booji/core",
   "author": "xietian",
   "license": "BSD-3-Clause",
@@ -17,9 +17,9 @@
     "lint": "prettier --write src/**/*"
   },
   "dependencies": {
-    "@booji/hub": "null",
-    "@booji/types": "null",
-    "@booji/utils": "null",
+    "@booji/hub": "1.0.1-alpha.1",
+    "@booji/types": "1.0.1-alpha.1",
+    "@booji/utils": "1.0.1-alpha.1",
     "tslib": "^2.3.1"
   }
 }

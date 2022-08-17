@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1-alpha.1](https://github.com/tian0o0/booji/compare/v1.0.1-alpha.0...v1.0.1-alpha.1) (2022-08-17)
+
 ### [1.0.1-alpha.0](https://github.com/tian0o0/booji/compare/v0.5.0...v1.0.1-alpha.0) (2022-08-17)
 
 ## [1.0.0](https://github.com/tian0o0/booji/compare/v0.5.0...v1.0.0) (2022-08-17)

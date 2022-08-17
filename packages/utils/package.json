@@ -1,6 +1,6 @@
 {
   "name": "@booji/utils",
-  "version": "null",
+  "version": "1.0.1-alpha.1",
   "description": "@booji/utils",
   "author": "xietian",
   "license": "BSD-3-Clause",
@@ -19,7 +19,7 @@
     "test:unit": "jest"
   },
   "dependencies": {
-    "@booji/types": "null",
+    "@booji/types": "1.0.1-alpha.1",
     "tslib": "^2.3.1"
   }
 }
