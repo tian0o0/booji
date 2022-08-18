@@ -22,6 +22,7 @@
       "@booji/react": ["packages/react/src"],
       "@booji/angular": ["packages/angular/src"],
       "@booji/worker": ["packages/worker/src"],
+      "@booji/node": ["packages/node/src"],
       "@booji/webpack-plugin": ["packages/webpack-plugin/src"],
     }
   }

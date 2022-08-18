@@ -1,6 +1,6 @@
 <h1 align="center">Booji.js</h1>
 <div align="center">
-<img src="https://raw.githubusercontent.com/tian0o0/pic/master/booji.PNG" width="150">
+<img src="https://raw.githubusercontent.com/tian0o0/pic/master/booji.png" width="180">
 </div>
 
 <p align="center">A progressive front-end monitor SDK for Web Application.</p>
@@ -13,10 +13,10 @@
 </p>
 
 ### Features
-- :gift: **Rich Integrations and Out of the box**
+- :gift: **Rich Integrations out of the box**
 - :art: **Highly Customizable**
-- :rainbow: **Support `Vue`/`Angular`/`React`**
-- :rocket: **Available reporting in `Web Worker` to avoid block the main thread**
+- :rainbow: **Support `Vue`/`Angular`/`React`/`Node`**
+- :rocket: **Available reporting in `Web Worker`**
 
 ### Quick Start
 ```ts
@@ -57,4 +57,4 @@ Please see [CHANGELOG.md](https://github.com/tian0o0/booji/blob/master/CHANGELOG
 Please see [FAQ.md](https://github.com/tian0o0/booji/blob/master/FAQ.md)
 
 ### Reference
-[Booji Server](https://github.com/tian0o0/booji-server/blob/master/README.md)
+[Booji Server](https://github.com/tian0o0/booji-server/)

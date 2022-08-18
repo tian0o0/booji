@@ -1,0 +1,46 @@
+{
+  "name": "@booji/node",
+  "version": "1.0.1-alpha.3",
+  "description": "@booji/node",
+  "author": "xietian",
+  "license": "BSD-3-Clause",
+  "main": "./dist/node.cjs.js",
+  "module": "./dist/node.esm.js",
+  "types": "./dist/node.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c && node ../../build/api-extractor.js node",
+    "lint": "prettier --write src/**/*"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/*.test.ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "./tsconfig.json",
+        "diagnostics": false
+      }
+    }
+  },
+  "dependencies": {
+    "@booji/core": "1.0.1-alpha.3",
+    "@booji/hub": "1.0.1-alpha.3",
+    "@booji/types": "1.0.1-alpha.3",
+    "@booji/utils": "1.0.1-alpha.3",
+    "tslib": "^2.3.1"
+  }
+}
