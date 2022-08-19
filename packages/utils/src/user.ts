@@ -14,11 +14,11 @@ export function createUserId(): string | undefined {
     logger.warn("当前环境不支持 sessionStorage");
     return;
   }
-  const BoojiUserId = sessionStorage.getItem(USER_ID);
+  const BoojiUserId = Global.sessionStorage.getItem(USER_ID);
   let uuid;
   if (!BoojiUserId) {
     uuid = uuid4();
-    sessionStorage.setItem(USER_ID, uuid);
+    Global.sessionStorage.setItem(USER_ID, uuid);
   } else {
     uuid = BoojiUserId;
   }

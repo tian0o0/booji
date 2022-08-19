@@ -1,16 +1,12 @@
 import { CoreIntegrations, initClientAndBindHub } from "@booji/core";
 import { Options } from "@booji/types";
 import { NodeClient } from "./Client";
-import {
-  UncaughtExceptionIntegration,
-  UnhandledRejectionIntegration,
-} from "./integrations";
+import { GlobalHandlerIntegration } from "./integrations";
 
 const defaultIntegrations = [
   new CoreIntegrations.InboundFilterIntegration(),
   new CoreIntegrations.DedupeIntegration(),
-  new UncaughtExceptionIntegration(),
-  new UnhandledRejectionIntegration(),
+  new GlobalHandlerIntegration(),
 ];
 /**
  *
@@ -45,10 +41,4 @@ function init(options: Options) {
   initClientAndBindHub(NodeClient, options);
 }
 
-export {
-  init,
-  Options,
-  CoreIntegrations,
-  UncaughtExceptionIntegration,
-  UnhandledRejectionIntegration,
-};
+export { init, Options, CoreIntegrations, GlobalHandlerIntegration };

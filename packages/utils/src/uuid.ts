@@ -1,7 +1,8 @@
-import { getGlobalObject } from "./global";
+import { Global } from "./global";
 
 /**
  * IE兼容
+ * @deprecated
  */
 interface MsCryptoWindow extends Window {
   msCrypto?: Crypto;
@@ -13,8 +14,7 @@ interface MsCryptoWindow extends Window {
  * @public
  */
 export function uuid4(): string {
-  const global = getGlobalObject<MsCryptoWindow>();
-  const crypto = global.crypto || global.msCrypto;
+  const crypto = Global.crypto;
 
   if (!(crypto === void 0) && crypto.getRandomValues) {
     // Use window.crypto API if available

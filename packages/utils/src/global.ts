@@ -16,11 +16,34 @@ interface BoojiGlobal {
  * @returns boolean
  */
 function isNodeEnv(): boolean {
-  return (
+  const isNode =
     Object.prototype.toString.call(
       typeof process !== "undefined" ? process : 0
-    ) === "[object process]"
-  );
+    ) === "[object process]";
+
+  isNode && mockSessionStorage();
+
+  return isNode;
+}
+
+/**
+ * 在 Node 环境中模拟浏览器端 sessionStorage api
+ * @internal
+ */
+function mockSessionStorage(): void {
+  let globalWithStorage = global as typeof globalThis & {
+    storage: { [key: string]: string };
+  };
+  let map = globalWithStorage.storage || {};
+
+  global.sessionStorage = {
+    setItem: (key: string, value: string) => (map[key] = value),
+    clear: () => (map = {}),
+    getItem: (key: string) => map[key],
+    removeItem: (key: string) => delete map[key],
+    key: () => null,
+    length: 0,
+  };
 }
 /**
  * 获取不同环境下的全局对象

@@ -1,2 +1,1 @@
-export * from "./UncaughtException";
-export * from "./UnhandledRejection";
+export * from "./GlobalHandler";
