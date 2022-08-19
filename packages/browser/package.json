@@ -1,6 +1,6 @@
 {
   "name": "@booji/browser",
-  "version": "1.0.1-alpha.3",
+  "version": "1.1.0-alpha.0",
   "description": "@booji/browser",
   "author": "xietian",
   "license": "BSD-3-Clause",
@@ -37,10 +37,10 @@
     }
   },
   "dependencies": {
-    "@booji/core": "1.0.1-alpha.3",
-    "@booji/hub": "1.0.1-alpha.3",
-    "@booji/types": "1.0.1-alpha.3",
-    "@booji/utils": "1.0.1-alpha.3",
+    "@booji/core": "1.1.0-alpha.0",
+    "@booji/hub": "1.1.0-alpha.0",
+    "@booji/types": "1.1.0-alpha.0",
+    "@booji/utils": "1.1.0-alpha.0",
     "rrweb": "^2.0.0-alpha.1",
     "tslib": "^2.3.1"
   }

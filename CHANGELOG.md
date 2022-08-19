@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-alpha.0](https://github.com/tian0o0/booji/compare/v1.0.1-alpha.3...v1.1.0-alpha.0) (2022-08-19)
+
+
+### Features
+
+* **@booji/node:** support node ([d5fad7c](https://github.com/tian0o0/booji/commit/d5fad7c0647c5d045819a4ec9a2903146cfbeea2))
+* support node.js ([e2b9a9b](https://github.com/tian0o0/booji/commit/e2b9a9bea750ae1790d0a1901e92662056f515ce)), closes [#4](https://github.com/tian0o0/booji/issues/4)
+
 ### [1.0.1-alpha.3](https://github.com/tian0o0/booji/compare/v1.0.1-alpha.2...v1.0.1-alpha.3) (2022-08-17)
 
 ### [1.0.1-alpha.2](https://github.com/tian0o0/booji/compare/v1.0.1-alpha.1...v1.0.1-alpha.2) (2022-08-17)
