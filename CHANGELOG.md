@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/tian0o0/booji/compare/v1.1.0-alpha.1...v1.2.0) (2022-08-20)
+
+
+### Features
+
+* **@booji/express:** support express ([836f313](https://github.com/tian0o0/booji/commit/836f313f4fac8f20fabacf61d7452d28ddddf297)), closes [#5](https://github.com/tian0o0/booji/issues/5)
+
 ## [1.1.0-alpha.1](https://github.com/tian0o0/booji/compare/v1.1.0-alpha.0...v1.1.0-alpha.1) (2022-08-19)
 
 ## [1.1.0-alpha.0](https://github.com/tian0o0/booji/compare/v1.0.1-alpha.3...v1.1.0-alpha.0) (2022-08-19)
