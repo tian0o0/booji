@@ -101,6 +101,22 @@ importers:
       '@booji/utils': link:../utils
       tslib: 2.3.1
 
+  packages/express:
+    specifiers:
+      '@booji/core': 1.1.0-alpha.1
+      '@booji/hub': 1.1.0-alpha.1
+      '@booji/node': 1.1.0-alpha.1
+      '@booji/types': 1.1.0-alpha.1
+      '@booji/utils': 1.1.0-alpha.1
+      tslib: ^2.3.1
+    dependencies:
+      '@booji/core': link:../core
+      '@booji/hub': link:../hub
+      '@booji/node': link:../node
+      '@booji/types': link:../types
+      '@booji/utils': link:../utils
+      tslib: 2.3.1
+
   packages/hub:
     specifiers:
       '@booji/types': 0.1.9

@@ -1,0 +1,45 @@
+{
+  "name": "@booji/express",
+  "version": "1.1.0-alpha.1",
+  "description": "@booji/express",
+  "author": "xietian",
+  "license": "BSD-3-Clause",
+  "main": "./dist/express.cjs.js",
+  "module": "./dist/express.esm.js",
+  "types": "./dist/express.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c && node ../../build/api-extractor.js express",
+    "lint": "prettier --write src/**/*"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/*.test.ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "./tsconfig.json",
+        "diagnostics": false
+      }
+    }
+  },
+  "dependencies": {
+    "@booji/hub": "1.1.0-alpha.1",
+    "@booji/types": "1.1.0-alpha.1",
+    "@booji/node": "1.1.0-alpha.1",
+    "tslib": "^2.3.1"
+  }
+}
