@@ -14,6 +14,16 @@ import { MAX_BREADCRUMBS } from ".";
  */
 export class Scope {
   /**
+   * 项目唯一标识
+   */
+  appKey: string = "";
+
+  /**
+   * release版本
+   */
+  release?: string;
+
+  /**
    * 面包屑栈
    * {@link @booji/types#BreadcrumbItem}
    */
@@ -27,27 +37,22 @@ export class Scope {
 
   /**
    * 用户行为队列
-   * @internal
+   * {@link @booji/types#Queue}
    */
   playbackQueue?: Queue<Playback>;
 
   /**
-   * 项目唯一标识
-   */
-  appKey: string = "";
-
-  /**
    * 自定义用户信息
+   * {@link @booji/types#User}
    */
   user: User = {
     id: createUserId(),
   };
 
   /**
-   * release版本
+   * 自定义用户信息
+   * @param user - {@link @booji/types#User}
    */
-  release?: string;
-
   setUser(user: User) {
     this.user = {
       ...this.user,

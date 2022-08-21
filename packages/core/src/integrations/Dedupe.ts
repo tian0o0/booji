@@ -33,6 +33,13 @@ export class DedupeIntegration implements Integration {
       return event;
     });
   }
+  /**
+   *
+   * @param event - {@link @booji/types#Event}
+   * @param previousEvent - {@link @booji/types#Event}
+   * @returns boolean
+   * @internal
+   */
   private shouldDropEvent(event: Event, previousEvent?: Event): boolean {
     if (this.disableDedupe) return false;
 

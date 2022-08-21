@@ -1,6 +1,11 @@
 import { EventProcessor } from "@booji/types";
 
 const fallbackGlobalObject = {};
+
+/**
+ * Booji全局对象定义
+ * @internal
+ */
 interface BoojiGlobal {
   console: Console;
   __BOOJI__: {
@@ -10,6 +15,7 @@ interface BoojiGlobal {
     globalEventProcessors: EventProcessor[];
   };
 }
+
 /**
  * 是否为 Node 环境
  * @internal
@@ -45,6 +51,7 @@ function mockSessionStorage(): void {
     length: 0,
   };
 }
+
 /**
  * 获取不同环境下的全局对象
  * @returns 全局对象

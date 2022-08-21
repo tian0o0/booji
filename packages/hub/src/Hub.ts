@@ -18,12 +18,15 @@ export class Hub {
    * 客户端
    * @remarks
    * 使用非空断言，因为Booji初始化调用bindClient后client一定有值
+   * {@link Client}
    */
   client!: Client;
+
   /**
    * 作用域
    * @remarks
    * TODO: 当前仅有一个scope，后续考虑改成scopes
+   * {@link Scope}
    */
   scope: Scope = new Scope();
 
@@ -34,6 +37,7 @@ export class Hub {
   getScope(): Scope {
     return this.scope;
   }
+
   /**
    * 将客户端实例绑定到当前hub
    * @param client - {@link @booji/types#Client}
@@ -44,9 +48,15 @@ export class Hub {
     this.scope.release = client.getOptions().release;
     emitter.emit(client);
   }
+
+  /**
+   * 自定义作用域
+   * @param cb - (scope: Scope) =\> void
+   */
   customScope(cb: (scope: Scope) => void): void {
     cb(this.scope);
   }
+
   /**
    * 面包屑入栈
    * @param breadcrumb - {@link @booji/types#BreadcrumbItem}
@@ -75,9 +85,16 @@ export class Hub {
 
     this.scope.addBreadcrumb(_breadcrumb, maxBreadcrumbs);
   }
+
+  /**
+   * 收集用户行为轨迹数据
+   * @param playback - {@link @booji/types#Playback}
+   * @param queue - {@link @booji/types#Queue}
+   */
   collectPlayback(playback: Playback, queue: Queue<Playback>) {
     this.scope.collectPlayback(playback, queue);
   }
+
   /**
    * 捕获事件
    * @param event - {@link @booji/types#Event}
@@ -88,6 +105,7 @@ export class Hub {
       this.invokeClient("captureEvent", event);
     });
   }
+
   /**
    * 捕获消息
    * @param message - 上报的message
@@ -96,6 +114,7 @@ export class Hub {
   captureMessage(message: string, level?: Severity) {
     this.invokeClient("captureMessage", message, level);
   }
+
   /**
    * 捕获异常
    * @param message - 上报的message
@@ -104,6 +123,7 @@ export class Hub {
   captureException(exception: Error | string) {
     this.invokeClient("captureException", exception);
   }
+
   /**
    * 调用客户端实例方法
    * @internal

@@ -29,7 +29,11 @@ export class InboundFilterIntegration implements Integration {
       return event;
     });
   }
-
+  /**
+   *
+   * @param clientOptions - {@link @booji/types#Options}
+   * @returns {@link @booji/types#InboundFilterOptions}
+   */
   private mergeOptions(clientOptions: Options): InboundFilterOptions {
     return {
       ignoreUrls: [
@@ -42,7 +46,12 @@ export class InboundFilterIntegration implements Integration {
       ],
     };
   }
-
+  /**
+   *
+   * @param event - {@link @booji/types#Event}
+   * @param options - {@link @booji/types#Options}
+   * @returns {@link @booji/types#InboundFilterOptions}
+   */
   private shouldDropEvent(
     event: Event,
     options: InboundFilterOptions
