@@ -1,8 +1,8 @@
 import { getCurrentHub } from "@booji/hub";
 import {
   BreadcrumbItem,
-  BrowserBreadcrumbCategory,
-  BrowserBreadcrumbType,
+  BreadcrumbCategory,
+  BreadcrumbType,
   Severity,
 } from "@booji/types";
 import { Global, isSupportHistory, rewrite } from "@booji/utils";
@@ -45,8 +45,8 @@ export class HistoryInstrument {
 
   static handle(from: string, to: string) {
     const breadcrumb: BreadcrumbItem = {
-      type: BrowserBreadcrumbType.Route,
-      category: BrowserBreadcrumbCategory.History,
+      type: BreadcrumbType.Route,
+      category: BreadcrumbCategory.History,
       level: Severity.Info,
       data: {
         from,

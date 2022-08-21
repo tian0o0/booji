@@ -1,7 +1,7 @@
 import {
   BreadcrumbItem,
-  BrowserBreadcrumbCategory,
-  BrowserBreadcrumbType,
+  BreadcrumbCategory,
+  BreadcrumbType,
 } from "@booji/types";
 import { Global, rewrite, severityFromString } from "@booji/utils";
 import { getCurrentHub } from "@booji/hub";
@@ -31,8 +31,8 @@ export class ConsoleInstrument {
   }
   static handle(data: any): void {
     const breadcrumb: BreadcrumbItem = {
-      type: BrowserBreadcrumbType.Debug,
-      category: BrowserBreadcrumbCategory.Console,
+      type: BreadcrumbType.Debug,
+      category: BreadcrumbCategory.Console,
       data: {
         arguments: data.args,
         logger: "console",

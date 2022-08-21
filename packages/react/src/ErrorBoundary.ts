@@ -1,7 +1,7 @@
 import { getCurrentHub } from "@booji/hub";
 import {
-  BrowserBreadcrumbCategory,
-  BrowserBreadcrumbType,
+  BreadcrumbCategory,
+  BreadcrumbType,
   Event,
   Severity,
 } from "@booji/types";
@@ -40,8 +40,8 @@ export class ErrorBoundary extends Component<
     });
 
     const event: Event = {
-      type: BrowserBreadcrumbType.Error,
-      category: BrowserBreadcrumbCategory.CodeError,
+      type: BreadcrumbType.Error,
+      category: BreadcrumbCategory.CodeError,
       message: `${error.name}: ${error.message}`,
       level: Severity.Error,
       timestamp: Date.now(),

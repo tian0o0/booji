@@ -1,6 +1,6 @@
 import {
-  BrowserBreadcrumbCategory,
-  BrowserBreadcrumbType,
+  BreadcrumbCategory,
+  BreadcrumbType,
   Event,
   Severity,
 } from "@booji/types";
@@ -20,8 +20,8 @@ export class UnhandledRejectionInstrument {
   }
   static handle(data: any): void {
     const r: Event = {
-      type: BrowserBreadcrumbType.Error,
-      category: BrowserBreadcrumbCategory.Unhandledrejection,
+      type: BreadcrumbType.Error,
+      category: BreadcrumbCategory.Unhandledrejection,
       level: Severity.Error,
       message: data,
       timestamp: Date.now(),

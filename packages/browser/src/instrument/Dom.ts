@@ -1,7 +1,7 @@
 import {
   BreadcrumbItem,
-  BrowserBreadcrumbCategory,
-  BrowserBreadcrumbType,
+  BreadcrumbCategory,
+  BreadcrumbType,
   Severity,
 } from "@booji/types";
 import { Global, htmlElement2String } from "@booji/utils";
@@ -29,8 +29,8 @@ export class DomInstrument {
 
     if (!str) return;
     const breadcrumb: BreadcrumbItem = {
-      type: BrowserBreadcrumbType.User,
-      category: BrowserBreadcrumbCategory.Click,
+      type: BreadcrumbType.User,
+      category: BreadcrumbCategory.Click,
       level: Severity.Info,
       data: htmlElement2String(data),
       timestamp: Date.now(),

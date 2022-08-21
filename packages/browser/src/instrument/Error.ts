@@ -1,6 +1,6 @@
 import {
-  BrowserBreadcrumbCategory,
-  BrowserBreadcrumbType,
+  BreadcrumbCategory,
+  BreadcrumbType,
   Event,
   Severity,
 } from "@booji/types";
@@ -53,8 +53,8 @@ function generateMessage(target: ResourceLoadErrorTarget): string {
 
 function handleResourceLoadError(target: ResourceLoadErrorTarget) {
   const r: Event = {
-    type: BrowserBreadcrumbType.Error,
-    category: BrowserBreadcrumbCategory.ResourceLoadError,
+    type: BreadcrumbType.Error,
+    category: BreadcrumbCategory.ResourceLoadError,
     level: Severity.Error,
     message: generateMessage(target),
     timestamp: Date.now(),
@@ -65,8 +65,8 @@ function handleResourceLoadError(target: ResourceLoadErrorTarget) {
 function handleCodeError(event: ErrorEvent) {
   const { message, filename, lineno, colno, error } = event;
   const r: Event = {
-    type: BrowserBreadcrumbType.Error,
-    category: BrowserBreadcrumbCategory.CodeError,
+    type: BreadcrumbType.Error,
+    category: BreadcrumbCategory.CodeError,
     level: Severity.Error,
     message: `${message} at ${filename}, ${lineno}行, ${colno}列`,
     timestamp: Date.now(),

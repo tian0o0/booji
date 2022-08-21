@@ -1,7 +1,7 @@
 import { getCurrentHub } from "@booji/hub";
 import {
-  BrowserBreadcrumbCategory,
-  BrowserBreadcrumbType,
+  BreadcrumbCategory,
+  BreadcrumbType,
   Event,
   Severity,
   ViewModel,
@@ -22,8 +22,8 @@ export function setupVueErrorHandler(vue: Vue) {
 function handle(error: Error, vm: ViewModel, info: string): void {
   const componentName = formatComponentName(vm);
   const event: Event = {
-    type: BrowserBreadcrumbType.Error,
-    category: BrowserBreadcrumbCategory.CodeError,
+    type: BreadcrumbType.Error,
+    category: BreadcrumbCategory.CodeError,
     message: `${error.name}: ${error.message} [${info}] ${componentName}`,
     level: Severity.Error,
     timestamp: Date.now(),

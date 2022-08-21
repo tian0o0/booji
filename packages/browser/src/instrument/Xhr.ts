@@ -1,8 +1,8 @@
 import {
   BoojiWrappedXMLHttpRequest,
   BreadcrumbItem,
-  BrowserBreadcrumbCategory,
-  BrowserBreadcrumbType,
+  BreadcrumbCategory,
+  BreadcrumbType,
   Event,
   Severity,
   VoidFn,
@@ -91,7 +91,7 @@ export class XhrInstrument {
         status,
         body,
       },
-      BrowserBreadcrumbCategory.Xhr
+      BreadcrumbCategory.Xhr
     );
   }
 }
@@ -102,13 +102,13 @@ export class XhrInstrument {
  */
 export function handleHttp(
   { method, url, status, statusText, body }: any,
-  category: BrowserBreadcrumbCategory
+  category: BreadcrumbCategory
 ) {
   const isHttpError = status >= 400;
 
   if (isHttpError) {
     const event: Event = {
-      type: BrowserBreadcrumbType.Http,
+      type: BreadcrumbType.Http,
       category,
       level: Severity.Warn,
       message: `${url} ${statusText || "failed"} [${status}]`, // TODO:
@@ -117,7 +117,7 @@ export function handleHttp(
     getCurrentHub().captureEvent(event);
   } else {
     const breadcrumb: BreadcrumbItem = {
-      type: BrowserBreadcrumbType.Http,
+      type: BreadcrumbType.Http,
       category,
       level: Severity.Info,
       data: {

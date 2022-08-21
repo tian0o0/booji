@@ -3,8 +3,8 @@ import { HttpErrorResponse } from "@angular/common/http";
 import { runOutsideAngular } from "./Zone";
 import { getCurrentHub } from "@booji/hub";
 import {
-  BrowserBreadcrumbCategory,
-  BrowserBreadcrumbType,
+  BreadcrumbCategory,
+  BreadcrumbType,
   Event,
   Severity,
 } from "@booji/types";
@@ -26,8 +26,8 @@ class BoojiErrorHandler implements ErrorHandler {
     const isString = typeof error === "string";
 
     const event: Event = {
-      type: BrowserBreadcrumbType.Error,
-      category: BrowserBreadcrumbCategory.CodeError,
+      type: BreadcrumbType.Error,
+      category: BreadcrumbCategory.CodeError,
       message: isString ? error : `${error.name}: ${error.message}`,
       level: Severity.Error,
       timestamp: Date.now(),

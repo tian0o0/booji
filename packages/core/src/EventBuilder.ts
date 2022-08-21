@@ -1,6 +1,6 @@
 import {
-  BrowserBreadcrumbCategory,
-  BrowserBreadcrumbType,
+  BreadcrumbCategory,
+  BreadcrumbType,
   Event,
   Severity,
 } from "@booji/types";
@@ -17,8 +17,8 @@ export function createEventFromMessage(
   level: Severity = Severity.Info
 ): Event {
   return {
-    type: BrowserBreadcrumbType.Custom,
-    category: BrowserBreadcrumbCategory.CaptureMessage,
+    type: BreadcrumbType.Custom,
+    category: BreadcrumbCategory.CaptureMessage,
     level,
     message,
     timestamp: Date.now(),
@@ -37,8 +37,8 @@ export function createEventFromException(
   level: Severity = Severity.Error
 ): Event {
   return {
-    type: BrowserBreadcrumbType.Error,
-    category: BrowserBreadcrumbCategory.CaptureException,
+    type: BreadcrumbType.Error,
+    category: BreadcrumbCategory.CaptureException,
     level,
     message: typeof exception === "string" ? exception : exception.message,
     timestamp: Date.now(),

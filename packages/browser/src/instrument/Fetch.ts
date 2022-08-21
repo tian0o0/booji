@@ -1,4 +1,4 @@
-import { BrowserBreadcrumbCategory } from "@booji/types";
+import { BreadcrumbCategory } from "@booji/types";
 import { Global, rewrite } from "@booji/utils";
 import { handleHttp } from ".";
 
@@ -50,7 +50,7 @@ export class FetchInstrument {
         statusText,
         body,
       },
-      BrowserBreadcrumbCategory.Fetch
+      BreadcrumbCategory.Fetch
     );
   }
 }

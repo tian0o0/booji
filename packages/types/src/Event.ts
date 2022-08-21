@@ -1,7 +1,7 @@
 import {
   BreadcrumbItem,
-  BrowserBreadcrumbType,
-  BrowserBreadcrumbCategory,
+  BreadcrumbType,
+  BreadcrumbCategory,
   SdkInfo,
   Severity,
 } from ".";
@@ -25,11 +25,11 @@ export interface Event {
   /**
    * 事件类型
    */
-  type?: BrowserBreadcrumbType;
+  type?: BreadcrumbType;
   /**
    * 事件分类
    */
-  category?: BrowserBreadcrumbCategory;
+  category?: BreadcrumbCategory;
   /**
    * 事件等级
    */

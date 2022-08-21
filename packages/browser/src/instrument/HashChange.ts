@@ -1,8 +1,8 @@
 import { getCurrentHub } from "@booji/hub";
 import {
   BreadcrumbItem,
-  BrowserBreadcrumbCategory,
-  BrowserBreadcrumbType,
+  BreadcrumbCategory,
+  BreadcrumbType,
   Severity,
 } from "@booji/types";
 import { Global, rewrite } from "@booji/utils";
@@ -20,8 +20,8 @@ export class HashChangeInstrument {
   }
   static handle(from: string, to: string) {
     const breadcrumb: BreadcrumbItem = {
-      type: BrowserBreadcrumbType.Route,
-      category: BrowserBreadcrumbCategory.HashChange,
+      type: BreadcrumbType.Route,
+      category: BreadcrumbCategory.HashChange,
       level: Severity.Info,
       data: {
         from,
