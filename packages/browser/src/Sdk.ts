@@ -1,5 +1,5 @@
 import { CoreIntegrations, initClientAndBindHub } from "@booji/core";
-import { Options } from "@booji/types";
+import { BrowserOptions } from "@booji/types";
 import { BrowserClient } from "./Client";
 import {
   BreadcrumbIntegration,
@@ -32,7 +32,7 @@ const defaultIntegrations = [
  *
  * @public
  */
-function init(options: Options) {
+function init(options: BrowserOptions) {
   // TODO: 提示缺少具体的参数名
   if (!options || !options.dsn || !options.appKey) {
     throw new Error("缺少初始化参数");
@@ -51,7 +51,7 @@ function init(options: Options) {
 
 export {
   init,
-  Options,
+  BrowserOptions,
   CoreIntegrations,
   BreadcrumbIntegration,
   GlobalHandlerIntegration,

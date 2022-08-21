@@ -43,20 +43,6 @@ export interface BaseOptions {
   beforeReport?: (event: Event) => Promise<Event | null> | Event | null;
 
   /**
-   * 是否开启Web Worker, 默认不开启
-   */
-  worker?: {
-    /**
-     * Web Worker URL
-     */
-    url: string;
-    /**
-     * Web Worker 内部是否启用队列上报
-     * @defaultValue `false`
-     */
-    queue?: boolean;
-  };
-  /**
    * 是否开启性能监控, 开启后将在页面 performance 数据准备后发送一次请求
    * @defaultValue `false`
    */
@@ -66,6 +52,50 @@ export interface BaseOptions {
    * 如果不传，则默认寻找最新版本的 sourcemap
    */
   release?: string;
+}
+
+/**
+ * 事件去重集成配置项
+ * @public
+ */
+export interface DedupeOptions {
+  /**
+   * 是否开启事件去重机制
+   * @defaultValue `true`
+   */
+  dedupe?: boolean;
+}
+
+/**
+ * 过滤器集成配置项
+ * @public
+ */
+export interface InboundFilterOptions {
+  /**
+   * 忽略上报的url集合，默认无限制
+   */
+  ignoreUrls?: Array<string | RegExp>;
+  /**
+   * 忽略上报的错误集合，默认无限制
+   */
+  ignoreErrors?: Array<string | RegExp>;
+}
+
+/**
+ * 全局错误处理集成配置项
+ * @public
+ */
+export interface GlobalHandlerOptions {
+  /**
+   * 是否开启onerror插装
+   * @defaultValue `true`
+   */
+  onerror?: boolean;
+  /**
+   * 是否开启onunhandledrejection插装
+   * @defaultValue `true`
+   */
+  onunhandledrejection?: boolean;
 }
 
 /**
@@ -120,47 +150,38 @@ export interface BreadcrumbOptions {
 }
 
 /**
- * 全局错误处理集成配置项
+ * 用户行为回放配置项
  * @public
  */
-export interface GlobalHandlerOptions {
+export interface PlaybackOptions {
   /**
-   * 是否开启onerror插装
-   * @defaultValue `true`
+   * 是否记录用户行为轨迹
+   * @defaultValue `false`
    */
-  onerror?: boolean;
+  playback?: boolean;
   /**
-   * 是否开启onunhandledrejection插装
-   * @defaultValue `true`
+   * 最大回放数据量
+   * @defaultValue 100
    */
-  onunhandledrejection?: boolean;
+  maxPlaybacks?: number;
 }
 
 /**
- * 过滤器集成配置项
+ * 是否开启Web Worker, 默认不开启
  * @public
  */
-export interface InboundFilterOptions {
-  /**
-   * 忽略上报的url集合，默认无限制
-   */
-  ignoreUrls?: Array<string | RegExp>;
-  /**
-   * 忽略上报的错误集合，默认无限制
-   */
-  ignoreErrors?: Array<string | RegExp>;
-}
-
-/**
- * 事件去重集成配置项
- * @public
- */
-export interface DedupeOptions {
-  /**
-   * 是否开启事件去重机制
-   * @defaultValue `true`
-   */
-  dedupe?: boolean;
+export interface WorkerOptions {
+  worker?: {
+    /**
+     * Web Worker URL
+     */
+    url: string;
+    /**
+     * TODO: Web Worker 内部是否启用队列上报
+     * @defaultValue `false`
+     */
+    queue?: boolean;
+  };
 }
 
 /**
@@ -179,30 +200,30 @@ export interface VueOptions {
 }
 
 /**
- * 用户行为回放配置项
+ * 核心通用配置项
  * @public
  */
-export interface PlaybackOptions {
-  /**
-   * 是否记录用户行为轨迹
-   * @defaultValue `false`
-   */
-  playback?: boolean;
-  /**
-   * 最大回放数据量
-   * @defaultValue 100
-   */
-  maxPlaybacks?: number;
-}
+export type CoreOptions = BaseOptions & DedupeOptions & InboundFilterOptions;
 
 /**
- * Booji通用配置项
+ * 浏览器端配置项
  * @public
  */
-export type Options = BaseOptions &
-  BreadcrumbOptions &
+export type BrowserOptions = CoreOptions &
   GlobalHandlerOptions &
-  InboundFilterOptions &
-  DedupeOptions &
-  VueOptions &
-  PlaybackOptions;
+  BreadcrumbOptions &
+  PlaybackOptions &
+  WorkerOptions &
+  VueOptions;
+
+/**
+ * Node端配置项
+ * @public
+ */
+export type NodeOptions = CoreOptions & GlobalHandlerOptions;
+
+/**
+ * 所有配置项
+ * @internal
+ */
+export type Options = BrowserOptions & NodeOptions;

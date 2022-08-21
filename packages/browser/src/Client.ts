@@ -1,5 +1,5 @@
 import { CoreClient } from "@booji/core";
-import { Options } from "@booji/types";
+import { BrowserOptions } from "@booji/types";
 import { BrowserReporter } from "./Reporter";
 
 /**
@@ -15,9 +15,9 @@ export class BrowserClient extends CoreClient {
   reporter: BrowserReporter = new BrowserReporter();
   /**
    * 创建 Browser端 SDK 实例
-   * @param options - Options
+   * @param options - {@link @booji/types#BrowserOptions}
    */
-  constructor(options: Options) {
+  constructor(options: BrowserOptions) {
     super(options);
   }
 }

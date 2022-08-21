@@ -1,5 +1,5 @@
 import { CoreIntegrations, initClientAndBindHub } from "@booji/core";
-import { Options } from "@booji/types";
+import { NodeOptions } from "@booji/types";
 import { NodeClient } from "./Client";
 import { GlobalHandlerIntegration } from "./integrations";
 
@@ -24,7 +24,7 @@ const defaultIntegrations = [
  *
  * @public
  */
-function init(options: Options) {
+function init(options: NodeOptions) {
   // TODO: 提示缺少具体的参数名
   if (!options || !options.dsn || !options.appKey) {
     throw new Error("缺少初始化参数");
@@ -41,4 +41,4 @@ function init(options: Options) {
   initClientAndBindHub(NodeClient, options);
 }
 
-export { init, Options, CoreIntegrations, GlobalHandlerIntegration };
+export { init, NodeOptions, CoreIntegrations, GlobalHandlerIntegration };

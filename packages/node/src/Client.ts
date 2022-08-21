@@ -1,5 +1,5 @@
 import { CoreClient } from "@booji/core";
-import { Options } from "@booji/types";
+import { NodeOptions } from "@booji/types";
 import { NodeReporter } from "./Reporter";
 
 /**
@@ -15,9 +15,9 @@ export class NodeClient extends CoreClient {
   reporter: NodeReporter = new NodeReporter();
   /**
    * 创建 Node端 SDK 实例
-   * @param options - Options
+   * @param options - {@link @booji/types#NodeOptions}
    */
-  constructor(options: Options) {
+  constructor(options: NodeOptions) {
     super(options);
   }
 }
