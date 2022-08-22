@@ -29,7 +29,7 @@ export class NodeReporter extends CoreReporter {
   }
 
   async report(event: Event): Promise<void> {
-    const _event = await this.beforeReport(event);
+    const _event = await super.beforeReport(event);
     if (!_event) return;
     const dsn = getCurrentHub().client.getOptions().dsn as string;
     this.reportByHttp(dsn, _event);
