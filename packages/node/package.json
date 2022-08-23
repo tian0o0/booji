@@ -1,6 +1,6 @@
 {
   "name": "@booji/node",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "@booji/node",
   "author": "xietian",
   "license": "BSD-3-Clause",
@@ -37,10 +37,10 @@
     }
   },
   "dependencies": {
-    "@booji/core": "1.2.2",
-    "@booji/hub": "1.2.2",
-    "@booji/types": "1.2.2",
-    "@booji/utils": "1.2.2",
+    "@booji/core": "1.2.3",
+    "@booji/hub": "1.2.3",
+    "@booji/types": "1.2.3",
+    "@booji/utils": "1.2.3",
     "tslib": "^2.3.1"
   }
 }
