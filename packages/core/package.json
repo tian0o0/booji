@@ -14,7 +14,8 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c && node ../../build/api-extractor.js core",
-    "lint": "prettier --write src/**/*"
+    "lint": "prettier --write src/**/*",
+    "test": "jest"
   },
   "dependencies": {
     "@booji/hub": "1.2.3",

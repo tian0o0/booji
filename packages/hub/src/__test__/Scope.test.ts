@@ -5,7 +5,6 @@ import {
   Event,
   EventProcessor,
   Options,
-  Playback,
   Severity,
 } from "@booji/types";
 import { emitter, linkedList2array } from "@booji/utils";
