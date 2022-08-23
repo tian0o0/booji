@@ -62,10 +62,7 @@ export class Hub {
    * @param breadcrumb - {@link @booji/types#BreadcrumbItem}
    */
   addBreadcrumb(breadcrumb: BreadcrumbItem) {
-    const { maxBreadcrumbs = MAX_BREADCRUMBS, beforeAddBreadcrumb }: Options =
-      this.client.getOptions();
-
-    if (maxBreadcrumbs <= 0) return;
+    const { beforeAddBreadcrumb }: Options = this.client.getOptions();
 
     let _breadcrumb: BreadcrumbItem | null = breadcrumb;
 
@@ -83,16 +80,15 @@ export class Hub {
       );
     }
 
-    this.scope.addBreadcrumb(_breadcrumb, maxBreadcrumbs);
+    this.scope.addBreadcrumb(_breadcrumb);
   }
 
   /**
    * 收集用户行为轨迹数据
    * @param playback - {@link @booji/types#Playback}
-   * @param queue - {@link @booji/types#Queue}
    */
-  collectPlayback(playback: Playback, queue: Queue<Playback>) {
-    this.scope.collectPlayback(playback, queue);
+  collectPlayback(playback: Playback) {
+    this.scope.collectPlayback(playback);
   }
 
   /**
@@ -142,8 +138,9 @@ export class Hub {
  * @public
  */
 export function getCurrentHub(): Hub {
+  /* istanbul ignore next */
   if (Global.__BOOJI__?.hub) return Global.__BOOJI__.hub;
-
+  /* istanbul ignore next */
   Global.__BOOJI__ = Global.__BOOJI__ || {};
   Global.__BOOJI__.hub = new Hub();
   return Global.__BOOJI__.hub;

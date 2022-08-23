@@ -51,6 +51,7 @@ function init(options: BrowserOptions) {
 
 export {
   init,
+  BrowserClient,
   BrowserOptions,
   CoreIntegrations,
   BreadcrumbIntegration,

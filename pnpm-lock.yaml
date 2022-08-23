@@ -119,8 +119,8 @@ importers:
 
   packages/hub:
     specifiers:
-      '@booji/types': 0.1.9
-      '@booji/utils': 0.1.9
+      '@booji/types': 1.2.2
+      '@booji/utils': 1.2.2
       tslib: ^2.3.1
     dependencies:
       '@booji/types': link:../types

@@ -72,7 +72,14 @@ export class Queue<T> {
   }
 }
 
-export function linkedList2array(head: QueueNode | null) {
+/**
+ * 将链表转化为数组
+ * @param queue - {@link Queue}
+ * @returns T[]
+ */
+export function linkedList2array<T>(queue: Queue<T>): T[] {
+  let head = queue.head;
+
   if (!head) {
     return [];
   }

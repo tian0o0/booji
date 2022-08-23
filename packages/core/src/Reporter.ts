@@ -1,6 +1,6 @@
 import { getCurrentHub, getGlobalEventProcessors } from "@booji/hub";
 import { Event, Reporter } from "@booji/types";
-import { createHash, logger, uuid4 } from "@booji/utils";
+import { createHash, linkedList2array, logger, uuid4 } from "@booji/utils";
 
 /**
  * 基础上报中心，实现了 {@link @booji/types#Reporter} 接口
@@ -12,8 +12,8 @@ export abstract class CoreReporter implements Reporter {
    */
   async beforeReport(event: Event): Promise<Event | null> {
     const { scope, client } = getCurrentHub();
-    // `playbackQueue` needn't report
-    const { playbackQueue, ...res } = scope;
+    // Generate list data from `breadcrumbStack`/`playbackQueue`
+    const { breadcrumbStack, playbackQueue, ...res } = scope;
     // Generate eventId/eventHash/issueId
     event.eventId = uuid4();
     event.eventHash = createHash(event, res.user);
@@ -22,6 +22,8 @@ export abstract class CoreReporter implements Reporter {
     event = {
       ...event,
       ...res,
+      breadcrumbs: breadcrumbStack.stacks,
+      playbacks: linkedList2array(playbackQueue),
     };
 
     // Drop event if necessary

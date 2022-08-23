@@ -1,8 +1,8 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "declarationDir": "dist/temp", // .d.ts存放目录，使用api-extractor打包后删除
+    "declarationDir": "dist/temp"
   },
   "include": ["src/**/*"],
-  "exclude": ["**/*.spec.ts", "**/*.spec.js", "node_modules"],
+  "exclude": ["node_modules"]
 }

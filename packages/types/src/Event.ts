@@ -4,6 +4,7 @@ import {
   BreadcrumbCategory,
   SdkInfo,
   Severity,
+  Playback,
 } from ".";
 /**
  * 事件接口
@@ -50,6 +51,10 @@ export interface Event {
    * 事件发生时的用户行为栈
    */
   breadcrumbs?: BreadcrumbItem[];
+  /**
+   * 事件发生时的用户行为轨迹
+   */
+  playbacks?: Playback[];
   /**
    * 事件发生时的url
    */

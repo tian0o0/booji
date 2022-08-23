@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { Global } from "./global";
 import { logger } from "./logger";
 import { uuid4 } from "./uuid";

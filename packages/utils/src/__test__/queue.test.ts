@@ -76,13 +76,13 @@ describe("queue", () => {
     queue.enqueue("a");
     queue.enqueue("b");
     queue.enqueue("c");
-    const array = linkedList2array(queue.head);
+    const array = linkedList2array(queue);
     expect(array).toStrictEqual(["a", "b", "c"]);
   });
 
   it("should linkedList2array work correctly when head is null", () => {
     const queue = new Queue(10);
-    const array = linkedList2array(queue.head);
+    const array = linkedList2array(queue);
     expect(array).toStrictEqual([]);
   });
 });

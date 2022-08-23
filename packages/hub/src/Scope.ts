@@ -1,12 +1,19 @@
-import { BreadcrumbItem, EventProcessor, Playback, User } from "@booji/types";
+import {
+  BreadcrumbItem,
+  Client,
+  EventProcessor,
+  Playback,
+  User,
+} from "@booji/types";
 import {
   createUserId,
   Global,
   logger,
   Queue,
-  linkedList2array,
+  emitter,
+  Stack,
 } from "@booji/utils";
-import { MAX_BREADCRUMBS } from ".";
+import { MAX_BREADCRUMBS, MAX_PLAYBACKS } from ".";
 
 /**
  * 作用域类
@@ -27,19 +34,13 @@ export class Scope {
    * 面包屑栈
    * {@link @booji/types#BreadcrumbItem}
    */
-  breadcrumbs: BreadcrumbItem[] = [];
-
-  /**
-   * 用户行为轨迹
-   * {@link @booji/types#Playback}
-   */
-  playbacks: Playback[] = [];
+  breadcrumbStack!: Stack<BreadcrumbItem>;
 
   /**
    * 用户行为队列
    * {@link @booji/types#Queue}
    */
-  playbackQueue?: Queue<Playback>;
+  playbackQueue!: Queue<Playback>;
 
   /**
    * 自定义用户信息
@@ -48,6 +49,15 @@ export class Scope {
   user: User = {
     id: createUserId(),
   };
+
+  constructor() {
+    emitter.once((client: Client) => {
+      const { maxBreadcrumbs = MAX_BREADCRUMBS, maxPlaybacks = MAX_PLAYBACKS } =
+        client.getOptions();
+      this.breadcrumbStack = new Stack<BreadcrumbItem>(maxBreadcrumbs);
+      this.playbackQueue = new Queue(maxPlaybacks);
+    });
+  }
 
   /**
    * 自定义用户信息
@@ -64,37 +74,32 @@ export class Scope {
    * 面包屑入栈
    * @param breadcrumb - {@link @booji/types#BreadcrumbItem}
    */
-  addBreadcrumb(breadcrumb: BreadcrumbItem, maxBreadcrumbs: number) {
-    const max = Math.min(maxBreadcrumbs, MAX_BREADCRUMBS);
-    this.breadcrumbs = [...this.breadcrumbs, breadcrumb].slice(-max);
-    // this.breadcrumbs.sort((a, b) => a.timestamp - b.timestamp);
-    logger.log(this.breadcrumbs);
+  addBreadcrumb(breadcrumb: BreadcrumbItem) {
+    this.breadcrumbStack.push(breadcrumb);
+    logger.log(this.breadcrumbStack);
   }
 
   /**
    * 清空面包屑栈
    */
   clearBreadcrumb() {
-    this.breadcrumbs = [];
+    this.breadcrumbStack.clear();
   }
 
   /**
    * 收集用户行为轨迹
    * @param playback - {@link @booji/types#Playback}
    */
-  collectPlayback(playback: Playback, queue: Queue<Playback>) {
-    this.playbackQueue = queue;
-    queue.enqueue(playback);
-    this.playbacks = linkedList2array(queue.head);
-    logger.log(this.playbacks);
+  collectPlayback(playback: Playback) {
+    this.playbackQueue.enqueue(playback);
+    logger.log(this.playbackQueue);
   }
 
   /**
    * 清空用户行为轨迹
    */
   clearPlayback() {
-    this.playbackQueue?.clear();
-    this.playbacks = [];
+    this.playbackQueue.clear();
   }
 }
 
@@ -104,9 +109,10 @@ export class Scope {
  * @public
  */
 export function getGlobalEventProcessors(): EventProcessor[] {
+  /* istanbul ignore next */
   if (Global.__BOOJI__?.globalEventProcessors)
     return Global.__BOOJI__.globalEventProcessors;
-
+  /* istanbul ignore next */
   Global.__BOOJI__ = Global.__BOOJI__ || {};
   Global.__BOOJI__.globalEventProcessors = [];
   return Global.__BOOJI__.globalEventProcessors;
