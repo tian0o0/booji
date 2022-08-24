@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { getCurrentHub, getGlobalEventProcessors } from "@booji/hub";
 import { Event, Reporter } from "@booji/types";
 import { createHash, linkedList2array, logger, uuid4 } from "@booji/utils";

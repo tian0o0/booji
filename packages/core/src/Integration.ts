@@ -1,5 +1,11 @@
 import { Integration, Options } from "@booji/types";
 
+/**
+ *
+ * @param options - {@link @booji/types#Options}
+ * @returns {@link @booji/types#Integration}[]
+ * @internal
+ */
 function normalizeIntegrations(options: Options): Integration[] {
   let integrations = ((options.defaultIntegrations &&
     options.defaultIntegrations) ||
@@ -23,7 +29,7 @@ function normalizeIntegrations(options: Options): Integration[] {
 /**
  * 初始化集成
  * @param options - {@link @booji/types#Options}
- * @returns {@link IntegrationMap}
+ * @returns void
  */
 export function setupIntegrations(options: Options) {
   // const map: IntegrationMap = {};

@@ -6,8 +6,7 @@ import {
   Options,
   Severity,
 } from "@booji/types";
-import { CoreClient } from "..";
-import { CoreReporter } from "../Reporter";
+import { CoreClient, CoreReporter } from "..";
 
 describe("Client", () => {
   let client: Client;
