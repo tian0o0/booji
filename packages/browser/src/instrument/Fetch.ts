@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { BreadcrumbCategory } from "@booji/types";
 import { Global, rewrite } from "@booji/utils";
 import { handleHttp } from ".";

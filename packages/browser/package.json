@@ -14,27 +14,8 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c && node ../../build/api-extractor.js browser",
-    "lint": "prettier --write src/**/*"
-  },
-  "jest": {
-    "collectCoverage": true,
-    "transform": {
-      "^.+\\.ts$": "ts-jest"
-    },
-    "moduleFileExtensions": [
-      "js",
-      "ts"
-    ],
-    "testEnvironment": "jsdom",
-    "testMatch": [
-      "**/*.test.ts"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsconfig": "./tsconfig.json",
-        "diagnostics": false
-      }
-    }
+    "lint": "prettier --write src/**/*",
+    "test": "jest"
   },
   "dependencies": {
     "@booji/core": "1.2.3",

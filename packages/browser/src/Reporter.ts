@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { CoreReporter } from "@booji/core";
 import { getCurrentHub } from "@booji/hub";
 import { Event } from "@booji/types";

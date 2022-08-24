@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { getCurrentHub } from "@booji/hub";
 import {
   BreadcrumbItem,
