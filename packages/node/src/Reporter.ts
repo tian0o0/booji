@@ -1,7 +1,8 @@
 import { CoreReporter } from "@booji/core";
 import { getCurrentHub } from "@booji/hub";
 import { Event } from "@booji/types";
-import http, { Agent, RequestOptions } from "http";
+import { request, Agent, RequestOptions } from "http";
+
 /**
  * Node端上报中心，继承自 {@link @booji/core#CoreClient}
  */
@@ -19,11 +20,9 @@ export class NodeReporter extends CoreReporter {
         "Content-Type": "application/json",
       },
     };
-    const req = http.request(dsn, options);
+    const req = request(dsn, options);
 
-    req.on("error", (e) => {
-      console.log(e);
-    });
+    req.on("error", (e: any) => {});
     req.write(JSON.stringify(event));
     req.end();
   }
