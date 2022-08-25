@@ -58,6 +58,7 @@ export class XhrInstrument {
             };
           });
         } else {
+          /** istanbul ignore next */
           xhr.addEventListener("readystatechange", onreadystatechangeHandler);
         }
 

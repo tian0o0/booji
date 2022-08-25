@@ -1,4 +1,4 @@
-/* istanbul ignore file */
+/** istanbul ignore file */
 import {
   BreadcrumbCategory,
   BreadcrumbType,

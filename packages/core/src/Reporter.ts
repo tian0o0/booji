@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import { getCurrentHub, getGlobalEventProcessors } from "@booji/hub";
 import { Event, Reporter } from "@booji/types";
 import { createHash, linkedList2array, logger, uuid4 } from "@booji/utils";
@@ -42,6 +41,7 @@ export abstract class CoreReporter implements Reporter {
           logger.warn("`beforeReport hook`没有返回值，取消事件上报");
           return Promise.resolve(null);
         }
+        this.afterEventReady();
         return Promise.resolve(customEvent);
       } else {
         logger.error("`beforeReport hook`必须是函数");
@@ -49,7 +49,6 @@ export abstract class CoreReporter implements Reporter {
     }
 
     this.afterEventReady();
-
     return Promise.resolve(event);
   }
 
