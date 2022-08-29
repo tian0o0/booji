@@ -15,5 +15,17 @@
     "dev": "rollup -c -w",
     "build": "rollup -c && node ../../build/api-extractor.js webpack-plugin",
     "lint": "prettier --write src/**/*"
+  },
+  "dependencies": {
+    "ali-oss": "^6.17.1",
+    "axios": "^0.27.2",
+    "form-data": "^4.0.0",
+    "tslib": "2.3.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "21.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@types/ali-oss": "^6.16.4"
   }
 }

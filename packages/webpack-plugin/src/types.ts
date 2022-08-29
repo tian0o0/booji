@@ -16,11 +16,28 @@ export interface Options {
    */
   release: string;
   /**
-   * sourcemap静态资源所托管的cdn
-   */
-  cdn: string;
-  /**
    * 上传sourcemap文件名的接口
    */
   reportUrl: string;
+
+  /**
+   * sourcemap静态资源所托管的cdn
+   * @internal
+   */
+  cdn?: string;
+  /**
+   * ali-oss配置
+   * @internal
+   */
+  oss?: OSSOptions;
+}
+
+/**
+ * @internal
+ */
+export interface OSSOptions {
+  accessKeyId: string;
+  accessKeySecret: string;
+  region: string;
+  bucket: string;
 }

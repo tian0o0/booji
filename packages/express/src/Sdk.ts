@@ -3,7 +3,7 @@ import { NodeOptions } from "@booji/types";
 
 /**
  * Express Init SDK
- * @param option - {@link @booji/types#Options}
+ * @param option - {@link @booji/types#NodeOptions}
  * @public
  */
 export function init(options: NodeOptions) {
