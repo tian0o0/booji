@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/tian0o0/booji/compare/v1.2.3...v1.3.0) (2022-08-30)
+
+
+### Features
+
+* support rollup plugin; refact webpack plugin; ([9d7882e](https://github.com/tian0o0/booji/commit/9d7882eeddfb304c24662df1f331aa1841bf603d)), closes [#7](https://github.com/tian0o0/booji/issues/7) [#8](https://github.com/tian0o0/booji/issues/8)
+
 ### [1.2.3](https://github.com/tian0o0/booji/compare/v1.2.2...v1.2.3) (2022-08-23)
 
 ### [1.2.2](https://github.com/tian0o0/booji/compare/v1.2.1...v1.2.2) (2022-08-21)
