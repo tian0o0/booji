@@ -18,3 +18,4 @@ export * from "./User";
 export * from "./Vue";
 export * from "./Performance";
 export * from "./Playback";
+export * from "./Plugin";

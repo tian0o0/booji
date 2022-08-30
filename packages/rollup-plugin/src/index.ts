@@ -1,46 +1,22 @@
-/**
- * Booji webpack-plugin
- * @packageDocumentation
- */
-
 import { PluginOptions } from "@booji/types";
 import fs from "fs";
 import path from "path";
 import axios from "axios";
 import FormData from "form-data";
 
-const NAME = "BoojiWebpackPlugin";
-
 /**
  * @public
  */
-export default class BoojiWebpackPlugin {
-  private readonly options: PluginOptions;
-  /**
-   *
-   * @param options - {@link Options}
-   */
-  constructor(options: PluginOptions) {
-    this.options = options;
-  }
-  apply(compiler: any) {
-    const callback = (compilation: any, cb: any) => {
-      const dists = Object.keys(compilation.assets).filter((file) =>
-        file.includes(".js.map")
-      );
-
-      upload(dists, this.options);
-      cb();
-    };
-    // 兼容webpack不同版本
-    // compiler.hooks.afterEmit.tapSync: webpack5+仅支持该写法
-    // compiler.plugin('afterEmit')
-    if (compiler.hooks?.afterEmit) {
-      compiler.hooks.afterEmit.tapAsync(NAME, callback);
-    } else {
-      compiler.plugin("afterEmit", callback);
-    }
-  }
+export default function boojiPlugin(options: PluginOptions) {
+  return {
+    name: "rollup-plugin-booji",
+    writeBundle(_: any, bundle: { [key: string]: any }) {
+      const dists = Object.keys(bundle)
+        .filter((file) => bundle[file].map)
+        .map((_) => `${_}.map`);
+      upload(dists, options);
+    },
+  };
 }
 
 /**

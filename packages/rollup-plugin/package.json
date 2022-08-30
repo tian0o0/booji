@@ -1,19 +1,19 @@
 {
-  "name": "@booji/webpack-plugin",
+  "name": "@booji/rollup-plugin",
   "version": "1.2.3",
-  "description": "@booji/webpack-plugin",
+  "description": "@booji/rollup-plugin",
   "author": "xietian",
   "license": "BSD-3-Clause",
-  "main": "./dist/webpack-plugin.cjs.js",
-  "module": "./dist/webpack-plugin.esm.js",
-  "types": "./dist/webpack-plugin.d.ts",
+  "main": "./dist/rollup-plugin.cjs.js",
+  "module": "./dist/rollup-plugin.esm.js",
+  "types": "./dist/rollup-plugin.d.ts",
   "files": [
     "dist",
     "README.md"
   ],
   "scripts": {
     "dev": "rollup -c -w",
-    "build": "rollup -c && node ../../build/api-extractor.js webpack-plugin",
+    "build": "rollup -c && node ../../build/api-extractor.js rollup-plugin",
     "lint": "prettier --write src/**/*"
   },
   "dependencies": {
