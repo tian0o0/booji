@@ -156,7 +156,6 @@ export interface BreadcrumbOptions {
 export interface PlaybackOptions {
   /**
    * 是否记录用户行为轨迹
-   * @defaultValue `false`
    */
   playback?: (key: any) => void;
   /**

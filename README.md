@@ -1,6 +1,6 @@
 <h1 align="center">Booji.js</h1>
 <div align="center">
-<img src="https://raw.githubusercontent.com/tian0o0/pic/master/booji.png" width="180">
+<img src="https://raw.githubusercontent.com/tian0o0/pic/master/booji.png" width="140">
 </div>
 
 <p align="center">A progressive front-end monitor SDK for Web Application.</p>
@@ -17,6 +17,13 @@
 - :art: **Highly Customizable**
 - :rainbow: **Support `Vue`/`Angular`/`React`/`Node`**
 - :rocket: **Available reporting in `Web Worker`**
+
+### Install
+```sh
+npm install @booji/browser 
+# or
+pnpm install @booji/browser
+```
 
 ### Quick Start
 ```ts
@@ -38,11 +45,11 @@ I have prepared some demos at `stackblitz`:
 
 ### Architecture
 
-#### Client Side
-![](https://raw.githubusercontent.com/tian0o0/pic/master/20220521181712.png)
+- **Booji SDK Model (4-Layer)**
+![](https://raw.githubusercontent.com/tian0o0/pic/master/20220831155800.png)
 
-#### Server Side
-![](https://raw.githubusercontent.com/tian0o0/pic/master/20220521181739.png)
+- **Booji Server**
+![](https://raw.githubusercontent.com/tian0o0/pic/master/20220831155825.png)
 
 ### API Reference
 
