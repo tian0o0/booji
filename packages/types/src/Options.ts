@@ -158,7 +158,7 @@ export interface PlaybackOptions {
    * 是否记录用户行为轨迹
    * @defaultValue `false`
    */
-  playback?: boolean;
+  playback?: (key: any) => void;
   /**
    * 最大回放数据量
    * @defaultValue 100

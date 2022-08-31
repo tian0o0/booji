@@ -21,10 +21,10 @@ export default {
       name: "Booji",
       file: "./dist/browser.min.js",
       format: "iife",
-      globals: {
-        rrweb: "rrweb",
-        // rrweb: "rrwebRecord",
-      },
+      // globals: {
+      //   rrweb: "rrweb",
+      //   // rrweb: "rrwebRecord",
+      // },
     },
   ],
   plugins: [
