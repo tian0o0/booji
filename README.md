@@ -45,11 +45,11 @@ I have prepared some demos at `stackblitz`:
 
 ### Architecture
 
-- **Booji SDK Model (4-Layer)**
-![](https://raw.githubusercontent.com/tian0o0/pic/master/20220831155800.png)
+- **Booji SDK `4-Layer` Model**
+![](https://raw.githubusercontent.com/tian0o0/pic/master/20220903140510.png)
 
 - **Booji Server**
-![](https://raw.githubusercontent.com/tian0o0/pic/master/20220831155825.png)
+![](https://raw.githubusercontent.com/tian0o0/pic/master/20220903141935.png)
 
 ### API Reference
 
