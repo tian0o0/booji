@@ -1,6 +1,6 @@
 {
   "name": "@booji/hub",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "@booji/hub",
   "author": "xietian",
   "license": "BSD-3-Clause",
@@ -18,8 +18,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@booji/types": "1.3.3",
-    "@booji/utils": "1.3.3",
+    "@booji/types": "1.3.4",
+    "@booji/utils": "1.3.4",
     "tslib": "^2.3.1"
   }
 }
