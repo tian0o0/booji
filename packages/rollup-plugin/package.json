@@ -11,6 +11,10 @@
     "dist",
     "README.md"
   ],
+  "keywords": [
+    "rollup-plugin",
+    "booji"
+  ],
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c && node ../../build/api-extractor.js rollup-plugin",

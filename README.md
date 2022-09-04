@@ -49,7 +49,7 @@ I have prepared some demos at `stackblitz`:
 ![](https://raw.githubusercontent.com/tian0o0/pic/master/20220903140510.png)
 
 - **Booji Server**
-![](https://raw.githubusercontent.com/tian0o0/pic/master/20220903141935.png)
+![](https://raw.githubusercontent.com/tian0o0/pic/master/20220903141935.png)  
 
 ### API Reference
 

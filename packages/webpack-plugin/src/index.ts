@@ -24,19 +24,18 @@ export default class BoojiWebpackPlugin {
     this.options = options;
   }
   apply(compiler: any) {
-    const callback = (compilation: any, cb: any) => {
+    const callback = (compilation: any) => {
       const dists = Object.keys(compilation.assets).filter((file) =>
         file.includes(".js.map")
       );
 
       upload(dists, this.options);
-      cb();
     };
     // 兼容webpack不同版本
-    // compiler.hooks.afterEmit.tapSync: webpack5+仅支持该写法
+    // compiler.hooks.afterEmit.tap: webpack5+仅支持该写法
     // compiler.plugin('afterEmit')
     if (compiler.hooks?.afterEmit) {
-      compiler.hooks.afterEmit.tapAsync(NAME, callback);
+      compiler.hooks.afterEmit.tap(NAME, callback);
     } else {
       compiler.plugin("afterEmit", callback);
     }

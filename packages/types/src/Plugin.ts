@@ -4,7 +4,7 @@
  */
 export interface PluginOptions {
   /**
-   * Booji开放平台token，用于上传sourcemap文件名
+   * Booji开放平台token，用于上传sourcemap接口鉴权
    */
   token: string;
   /**
@@ -16,7 +16,7 @@ export interface PluginOptions {
    */
   release: string;
   /**
-   * 上传sourcemap文件名的接口
+   * 上传sourcemap文件的接口
    */
   reportUrl: string;
   /**
