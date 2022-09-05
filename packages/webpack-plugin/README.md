@@ -1,6 +1,6 @@
 ## @booji/webpack-plugin
 
-> 打包后上传SourceMap文件名至Booji服务端
+> 打包后上传SourceMap文件至Booji服务端
 
 ### 使用示例
 
