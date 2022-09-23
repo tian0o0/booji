@@ -9,7 +9,6 @@
 <a href="https://github.com/tian0o0/booji/tags"><img src="https://img.shields.io/github/v/tag/tian0o0/booji?logo=github&style=for-the-badge"/></a>
 <a href="https://github.com/tian0o0/booji/actions"><img src="https://img.shields.io/github/workflow/status/tian0o0/booji/Deploy?logo=github&style=for-the-badge"/></a>
 <a href="https://app.codecov.io/gh/tian0o0/booji/"><img src="https://img.shields.io/codecov/c/github/tian0o0/booji/master?logo=codecov&style=for-the-badge"/></a>
-<a href="https://space.bilibili.com/7230077"><img src="https://img.shields.io/badge/B站-来干杯鸭-f3f3f3?logo=bilibili&labelColor=ff69b4&logoColor=white&style=for-the-badge"/></a>
 </p>
 
 ### Features
